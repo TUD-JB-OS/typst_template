@@ -16,6 +16,10 @@
   authors: "[# for author in doc.authors #][- author.name -][# if not loop.last #], [# endif #][# endfor #]",
 [# endif #]
 
+//date
+[# if doc.date #]
+  date: "[-doc.date.day-]-[-doc.date.month-]-[-doc.date.year-]",
+[# endif #]
 
 // logo for top page
 [# if options.logo #]

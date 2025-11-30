@@ -20,6 +20,7 @@
   title: "Book Title",
   subtitle: none,
   authors: "Your name",
+  date: none,
   cover: none,            // <— path to cover "images/cover.png"
   cover_width: 12cm,    
   coverposition: 1cm,
@@ -108,12 +109,23 @@
   v(1em)
 
   // authors in gray
-  if authors != none {
-  place(bottom + right, 
-    text(12pt, fill: gray.darken(50%), authors)
-  )
+  // if authors != none {
+  // place(bottom + right, 
+  //   box(
+  //     text(12pt, fill: gray.darken(50%), authors),
+  //     text(12pt, fill: gray.darken(50%), date)
+  //   )
+  // )
+  // }
 
-  }
+if authors != none {
+  place(bottom + right,
+    text(size: 12pt, fill: gray.darken(50%))[
+      #authors \
+      #date
+    ]
+  )
+}
 
 
 // PREFACE, 

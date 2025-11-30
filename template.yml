@@ -1,7 +1,7 @@
 jtex: v1
 kind: typst
-title: LaPreprint Typst Template
-description: Easily create beautiful preprints in Typst
+title: TUD LaTeX thesis template
+description:  A basic, Typst based, paper styled template for TUD Bachelor and Master thesis
 template: template.typ
 
 files:
@@ -24,11 +24,13 @@ license: MIT
 tags:
   - book
 # thumbnail: ./examples/pixels/files/screenshot.png
-github: https://github.com/myst-templates/plain_typst_book
+github: https://github.com/TUD-JB-OS/typst_template
 doc:
   - id: title
     required: true
   - id: authors
+    required: true
+  - id: date
     required: true
   - id: subtitle
   - id: short_title
