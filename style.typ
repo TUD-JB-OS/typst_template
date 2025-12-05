@@ -182,7 +182,10 @@ if authors != none {
       left: margin_left,
       right: margin_right 
       ),    //set left margin
-    header: if logo != none { align(center)[#image(logo, width: logo_width)] } else { none },//include logo
+    header: if logo != none { 
+        align(center)[#image(logo, width: logo_width)]
+      } 
+      else { none },//include logo
   )   
 
   set text(

@@ -25,7 +25,7 @@ project:
 
 # Page settings
       #### Logo at top of position
-      logo: logo.svg
+      logo: logo.png
       logo_width: 10
 
       #### Looks
