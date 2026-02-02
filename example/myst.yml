@@ -2,13 +2,15 @@
 version: 1
 project:
   id: 95be6ed1-c602-4f30-b128-bc604678eac1
-  title: plain_typst_book
+  title: Some awesome Typst styled book
+  subtitle: an introduction to awesomeness
   # description:
   # keywords: []
   
   authors: 
-  - Luuk Fröling 
-  - Freek Pols
+    - Name Student
+    - Name Supervisor
+    - Name supervisor 2
 
   github: https://github.com/myst-templates/plain_typst_book
   

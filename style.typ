@@ -94,38 +94,50 @@
 
 // COVERPAGE
   // Title, subtitle, 
-  align(center, text(17pt, weight: "bold", fill: theme, title))
+  place(dx: 25%, line(length: 50%)) //horizontal line
+  v(2em)                            //vertical spacing
+
+  align(center, text(17pt, weight: "bold", font: "Arial", fill: theme, title))
   if subtitle != none {
     parbreak()
-    box(text(14pt, fill: gray.darken(30%), subtitle))
+    align(center, box(text(14pt, fill: gray.darken(30%), subtitle)))
   }
+
+  if authors != none {
+    let names = authors.split(", ").map(x => x.trim())
+    let main-author = names.at(0)
+    let supervisors = names.slice(1)
+
+  align(center, text(size: 12pt, fill: gray.darken(50%))[
+    #main-author \
+    #if supervisors.len() == 1 {
+      "Supervisor: " + supervisors.join(", ")
+    }
+    #if supervisors.len() > 1 {
+      "Supervisors: " + supervisors.join(", ")
+    }
+  ])
+}
+
+  v(1em)
+  align(center, text(12pt, fill: gray.darken(50%), date))
+  
+  v(1em)
+
+  place(dx: 25%, line(length: 50%))
+
 
     if cover != none {
       v(coverposition)
       align(center, image((cover), width: cover_width))
     }
 
-  //author
+
   v(1em)
 
-  // authors in gray
-  // if authors != none {
-  // place(bottom + right, 
-  //   box(
-  //     text(12pt, fill: gray.darken(50%), authors),
-  //     text(12pt, fill: gray.darken(50%), date)
-  //   )
-  // )
-  // }
 
-if authors != none {
-  place(bottom + right,
-    text(size: 12pt, fill: gray.darken(50%))[
-      #authors \
-      #date
-    ]
-  )
-}
+
+
 
 
 // PREFACE, 
