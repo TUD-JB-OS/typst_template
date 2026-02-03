@@ -94,10 +94,10 @@
 
 // COVERPAGE
   // Title, subtitle, 
-  place(dx: 25%, line(length: 50%)) //horizontal line
+  place(dx: 15%, line(length: 70%)) //horizontal line
   v(2em)                            //vertical spacing
 
-  align(center, text(17pt, weight: "bold", font: "Arial", fill: theme, title))
+  align(center, text(17pt, weight: "bold", font: "Arial", fill: black/*theme*/, title))
   if subtitle != none {
     parbreak()
     align(center, box(text(14pt, fill: gray.darken(30%), subtitle)))
@@ -108,15 +108,31 @@
     let main-author = names.at(0)
     let supervisors = names.slice(1)
 
-  align(center, text(size: 12pt, fill: gray.darken(50%))[
-    #main-author \
-    #if supervisors.len() == 1 {
-      "Supervisor: " + supervisors.join(", ")
-    }
-    #if supervisors.len() > 1 {
-      "Supervisors: " + supervisors.join(", ")
-    }
-  ])
+  // align(center, text(size: 12pt, fill: gray.darken(50%))[
+  //   AUTHOR: #upper(main-author) \
+  //   #if supervisors.len() == 1 {
+  //     "SUPERVISOR: " + upper(supervisors.join(", "))
+  //   }
+  //   #if supervisors.len() > 1 {
+  //     "SUPERVISORS: " + upper(supervisors.join(", "))
+  //   }
+  // ])
+  let label = if supervisors.len() == 1 { "SUPERVISOR:" } else { "SUPERVISORS:" }
+
+  align(center)[
+  
+    #set text(size: 12pt, fill: gray.darken(50%))
+
+    #grid(
+      columns: (auto, auto),
+      column-gutter: 0.6em,
+      align: (right, left),
+
+      [AUTHOR:], [#upper(main-author) #v(.6em)],
+      [#label],  [#upper(supervisors.join(", "))],
+    )
+  ]
+  
 }
 
   v(1em)
