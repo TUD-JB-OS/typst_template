@@ -3,14 +3,14 @@ version: 1
 project:
   id: 95be6ed1-c602-4f30-b128-bc604678eac1
   title: Some awesome Typst styled thesis
-  subtitle: an introduction to awesomeness
+  subtitle: an introduction to styling your thesis with Typst
   # description:
   # keywords: []
   
   authors: 
     - Freek Pols
-    - Gary Steele
-    - Ilke Ercan
+    - Supervisor 1
+    - Supervisor 2
 
   github: https://github.com/myst-templates/plain_typst_book
   
