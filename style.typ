@@ -21,6 +21,7 @@
   subtitle: none,
   authors: "Your name",
   date: none,
+  abstract: none,
   cover: none,            // <— path to cover "images/cover.png"
   cover_width: 12cm,    
   coverposition: 1cm,
@@ -41,7 +42,7 @@
   margin_top: 2cm,
   margin_bottom: 2cm,
   margin_left: 20%,
-  margin_right: 10%,
+  margin_right: 20%,
   logo: none,
   logo_width: 10%,
   
@@ -55,28 +56,24 @@
   body
 ) = {
 
-  set page(
-    numbering: none,
-    paper-size,
-    ) //numbering off until first chapter
+  // numbering off until first chapter
+  set page(numbering: none, paper-size,)  
   
+  // Configure heading numbering: 1., 1.1.1, etc.
   set heading(numbering: (..args) => {
     let nums = args.pos()
     let level = nums.len()
     if level == 1 {[#numbering("1.", ..nums)]} else {[#numbering("1.1.1", ..nums)]}
     },   
-    
-)
+    )
 
   // Set figure numbering to x.y where x is chapter number and y is figure number within chapter
-
   set figure(numbering: (..args) => {
     // get current chapter number (first level of heading)
     let chapter = counter(heading).display((..nums) => nums.pos().at(0)) // nums is array of all levels, at(0) is first level, display formats it.  
     let fig = counter(figure).display("1")    // counter counts, display formats it
     [#chapter.#fig]
-  })
-  
+  })  
 
   // Configure equation numbering and spacing.
   set math.equation(numbering: (..args) => {
@@ -85,60 +82,50 @@
   })
   show math.equation: set block(spacing: 1em)
 
-
   // Configure lists.
   set enum(indent: 10pt, body-indent: 9pt)
   set list(indent: 10pt, body-indent: 9pt)
 
 
+/*-------------START COVERPAGE--------------*/
 
-// COVERPAGE
-  // Title, subtitle, 
-  place(dx: 15%, line(length: 70%)) //horizontal line
-  v(2em)                            //vertical spacing
+// Title, subtitle, 
+  place(dx: 15%, line(length: 70%))   //horizontal line
+  v(2em)                              //vertical spacing
 
-  align(center, text(17pt, weight: "bold", font: "Arial", fill: black/*theme*/, title))
+  align(center, text(17pt, weight: "bold", font: "Arial", fill: black/*theme*/, upper(title)))
   if subtitle != none {
     parbreak()
-    align(center, box(text(14pt, fill: gray.darken(30%), subtitle)))
+    align(center, box(text(14pt, fill: gray.darken(30%), upper(subtitle))))
   }
 
+  v(2em)
+
+// Author and Supervisor(s)
   if authors != none {
     let names = authors.split(", ").map(x => x.trim())
     let main-author = names.at(0)
     let supervisors = names.slice(1)
 
-  // align(center, text(size: 12pt, fill: gray.darken(50%))[
-  //   AUTHOR: #upper(main-author) \
-  //   #if supervisors.len() == 1 {
-  //     "SUPERVISOR: " + upper(supervisors.join(", "))
-  //   }
-  //   #if supervisors.len() > 1 {
-  //     "SUPERVISORS: " + upper(supervisors.join(", "))
-  //   }
-  // ])
   let label = if supervisors.len() == 1 { "SUPERVISOR:" } else { "SUPERVISORS:" }
 
-  align(center)[
-  
-    #set text(size: 12pt, fill: gray.darken(50%))
 
-    #grid(
-      columns: (auto, auto),
-      column-gutter: 0.6em,
-      align: (right, left),
+  grid(
+    columns: (1fr, 1fr),
+    column-gutter: 2em,     
+    row-gutter: 0.6em,
+    align: (right, left),
+    
 
-      [AUTHOR:], [#upper(main-author) #v(.6em)],
-      [#label],  [#upper(supervisors.join(", "))],
-    )
-  ]
-  
+    [AUTHOR:], [#upper(main-author)], 
+    [#label],  [#upper(supervisors.join(", "))],
+  )
 }
 
   v(1em)
   align(center, text(12pt, fill: gray.darken(50%), date))
   
-  v(1em)
+  v(.5em)
 
   place(dx: 25%, line(length: 50%))
 
@@ -152,8 +139,20 @@
   v(1em)
 
 
+/*-------------END COVERPAGE--------------*/
 
+// ABSTRACT
+align(center, text(12pt, fill: gray.darken(50%), abstract))
 
+  if abstract != none {
+    pagebreak()
+    place(top + left, 
+      text(14pt, fill: theme, "Abstract")
+    )
+    v(1em)
+    set par(justify: true)
+    align(center, box(width: 70%, text(11pt, overhang: true, font:  "New Computer Modern", fill: gray.darken(30%), abstract)))
+  }
 
 
 // PREFACE, 

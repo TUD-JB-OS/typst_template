@@ -11,6 +11,11 @@
   subtitle: "[-doc.subtitle-]",
 [# endif #]
 
+// abstract
+[# if doc.abstract #]
+  abstract: "[-doc.abstract-]",
+[# endif #]
+
 // authors
 [# if doc.authors #]
   authors: "[# for author in doc.authors #][- author.name -][# if not loop.last #], [# endif #][# endfor #]",

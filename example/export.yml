@@ -30,10 +30,10 @@ project:
 
       #### Looks
       papersize: a4
-      margin_top: 2 #cm
-      margin_bottom: 2 #cm
-      margin_left: 10 #%
-      margin_right: 10 #%
+      margin_top: 2.5 #cm
+      margin_bottom: 2.5 #cm
+      margin_left: 15 #%
+      margin_right: 15 #%
       show_pagenumber: true
 
       #### Fonts

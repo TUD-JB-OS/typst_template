@@ -35,6 +35,7 @@ doc:
   - id: subtitle
   - id: short_title
   - id: open_access
+  - id: abstract
   - id: keywords
   - id: doi
   - id: venue

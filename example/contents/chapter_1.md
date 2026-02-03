@@ -1,3 +1,6 @@
+---
+abstract: This is an example of a Typst based thesis template for Delft University of Technology. It includes options for cover page, abstract, ToC, logos, fonts, colors and more.
+---
 # Chapter 1
 
 ## section 1 
