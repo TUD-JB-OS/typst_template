@@ -12,8 +12,8 @@
 [# endif #]
 
 // abstract
-[# if doc.abstract #]
-  abstract: "[-doc.abstract-]",
+[# if parts.abstract #]
+  abstract:  "[-parts.abstract-]",
 [# endif #]
 
 // authors

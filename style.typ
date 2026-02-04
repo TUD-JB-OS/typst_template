@@ -138,21 +138,18 @@
 
   v(1em)
 
-
+  pagebreak()
 /*-------------END COVERPAGE--------------*/
 
 // ABSTRACT
-align(center, text(12pt, fill: gray.darken(50%), abstract))
+if abstract != none {
+  align(center,upper("abstract"))
+  block(inset: (left: 15%, right: 15%),)[
+    #set par(justify: true)
+    #text(12pt, fill: gray.darken(50%), abstract)
+  ]
+}
 
-  if abstract != none {
-    pagebreak()
-    place(top + left, 
-      text(14pt, fill: theme, "Abstract")
-    )
-    v(1em)
-    set par(justify: true)
-    align(center, box(width: 70%, text(11pt, overhang: true, font:  "New Computer Modern", fill: gray.darken(30%), abstract)))
-  }
 
 
 // PREFACE, 

@@ -34,11 +34,14 @@ doc:
     required: true
   - id: subtitle
   - id: short_title
-  - id: open_access
-  - id: abstract
+  - id: open_access 
   - id: keywords
   - id: doi
   - id: venue
+
+parts:
+  - id: abstract
+  - id: acknowledgements
 
 options:
   - id: kind
@@ -120,4 +123,3 @@ options:
     type: string
     description: a preface which is not included online
 
-parts: []
