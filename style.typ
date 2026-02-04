@@ -167,16 +167,16 @@ if abstract != none {
 
 
 
-// PREFACE, 
-  if preface != none {
-    pagebreak()
-    place(top + left, 
-      text(14pt, fill: theme, "Preface")
-    )
-    v(1em)
-    set par(justify: true)
-    align(center, box(width: 70%, text(11pt, overhang: true, font:  "New Computer Modern", fill: gray.darken(30%), preface)))
-  }
+// // PREFACE, 
+//   if preface != none {
+//     pagebreak()
+//     place(top + left, 
+//       text(14pt, fill: theme, "Preface")
+//     )
+//     v(1em)
+//     set par(justify: true)
+//     align(center, box(width: 70%, text(11pt, overhang: true, font:  "New Computer Modern", fill: gray.darken(30%), preface)))
+//   }
 
 
 //OUTLINE OF THE BOOK
