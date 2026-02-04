@@ -199,7 +199,7 @@ if abstract != none {
 
 //RESETING NUMBERING
   show heading.where(level: 1): it => {
-    pagebreak()
+    // pagebreak() //uncomment to have a blank page after each chapter 
     // Reset all counters with a new chapter
     counter(figure).update(0)                // all figures (irrespective of kind)
     counter(figure.where(kind: table)).update(0) // specific for tables
@@ -229,11 +229,11 @@ if abstract != none {
 
   set text(
     font: font,
-    size: fontsize
+    size: 11pt,
     )
   set par(
     leading: linespacing,
-    justify: justification
+    justify: true
     )
 
   counter(page).update(1)   //set number to 1

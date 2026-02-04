@@ -1,90 +1,34 @@
-# Chapter 2 
+# Methode
 
-An impression from the book [mechanics and special relativity](https://freekpols.github.io/Mechanica/).
+## Experimentele Opstelling
+Voor de metingen aan het eerste en tweede orde filter wordt gebruik gemaakt van het circuit zoals schematisch weergegeven in \numref{fig:opstelling}. Het eerste orde filter bestaat uit een weerstand $R_0 = 103.5 \pm 0.1 \mathrm{\Omega}$ en een condensator $C_0 = 3.42 \pm 0.08 \mathrm{\mu F}$. De spanning over de functiegenerator ($V_{in}$) en de uitgangspanning $V_{out}$ over de condensator worden met de oscilloscoop gemeten. In het tweede orde filter staat over de uitgang van het eerste filter met $R_1 = 103.5 \pm 0.1 \mathrm{\Omega}$ en $C_1 = 2.19 \pm 0.07 \mathrm{\mu F}$ een tweede filter met $R_2 = 100.3 \pm 0.1 \mathrm{\Omega}$ en $C_2 = 0.96 \pm 0.01 \mathrm{\mu F}$. De uitgangsspanning wordt dan over $C_2$ gemeten. 
 
-## Representations
+Deze waarden voor $R_0$ en $C_0$ zijn zo gekozen dat de cut-off frequentie van het filter rond $1 \mathrm{kHz}$ ligt. De oscilloscoop en functiegenerator werken namelijk goed enkele ordes boven en onder deze frequentie. De waarden voor $R_1$, $R_2$, $C_1$ en $C_2$ zijn zo gekozen dat het systeem een vergelijkbare cut-off frequentie heeft als het eerste orde filter wat handig is voor het vergelijken van de twee filters.
 
-Physics problems and concepts can be represented in multiple ways, each offering a different perspective and set of insights. The ability to translate between these representations is one of the most important skills you will develop as a physics student. In this section, we examine three key forms of representation: equations, graphs and drawings, and verbal descriptions using the context of a base jumper, see {numref}`fig_basejump`.
+Alle componenten kunnen ideaal worden beschouwd. De interne weerstand van de oscilloscoop is namelijk veel groter dan de impedantie van de condensator. Ook is de capaciteit van de BNC-kabels verwaarloosbaar ten opzichte van de gebruikte condensatoren. De weerstand van de bedrading is verwaarsloosbaar ten opzichte van de gebruikte Ohmse weerstand.
 
-```{figure} ../figures/ch0_Basejumper.jpg
-:label: fig_basejump
-:width: 70%
-:alt: A base jumper jumping from a very high tower.
+```{figure} ../figures/circuit.*
+:label: fig:opstelling
+:width: 80%
 
-A base jumper is used as context to get familiar with representation, picture from https://commons.wikimedia.org/wiki/File:04SHANG4963.jpg
+Schematische weergave van de circuits. (boven) De functiegenerator (Keysight EDU33212AA) staat in serie met de weerstand $R_0$ en de condensator $C_0$. De spanning over de condensator wordt gemeten met de oscilloscoop (Keysight EDUX1052A). (onder) De uitgangsspanning van het eerste filter bestaande uit $R_1$ en $C_1$ wordt gefilterd door $R_2$ en $C_2$. De spanning over $C_2$ wordt gemeten met de oscilloscoop.
 ```
 
-|Row 1|Row 2|
-|---|---|
-|some content | some more content|
-|a=b+2|c=3|
+## Meetprocedure
+De spanningsoverdracht van beide filters wordt bepaald door de peak-to-peak spanning van het ingangssignaal en het uitgangssignaal te meten met de oscilloscoop. De frequentie varieert tussen $10 \mathrm{Hz} en $100 \mathrm{kHz}$ met stapgrootte factor $1.5$. Dat zorgt voor voor een gelijke verdeling van de meetpunten op een logaritmische schaal met een bereik ver boven en onder de cut-off frequentie.
 
-### Verbal descriptions
+## Data-analyse
+De spanningsoverdracht is gelijk aan de verhouding tussen de peak-to-peak spanning van het ingangssignaal en het uitgangssignaal. Voor het doorrekenen van de onzekerheden wordt de calculus methode toegepast. De onzekerheid in de meetwaarden volgt uit de specificaties van de gebruikte apparatuur. 
+Om de overeenstemming tussen de theorie en het experiment te onderzoeken wordt ook een theoretisch model gefit met behulp van de least-squares methode. Voor het eerste orde filter fitten we vergelijking \ref{eq:theorie} in de vorm
 
-Words are indispensable in physics. Language is used to describe a phenomenon, explain concepts, pose problems and interpret results. A good verbal description makes clear:
-- What is happening in a physical scenario;
-- What assumptions are being made (e.g., frictionless surface, constant mass);
-- What is known and what needs to be found.
-
-```{example} Base jumper: Verbal description
-Let us consider a base jumper jumping from a 300 m high building. We take that the jumper drops from that height with zero initial velocity. We will assume that the stunt is performed safely and in compliance with all regulations/laws. Finally, we will assume that the problem is 1-dimensional: the jumper drops vertically down and experiences only gravity, buoyancy and air-friction. 
-
-We know (probably from experience) that the jumper will accelerate. Picking up speed increases the drag force acting on the jumper, slowing the *acceleration* (meaning it still accelerates!). The speed keeps increasing until the jumper reaches its terminal velocity, that is the velocity at which the drag (+ buoyancy) exactly balance gravity and the sum of forces on the jumper is zero. The jumper no longer accelerates. 
-
-Can we find out what the terminal velocity of this jumper will be and how long it takes to reach that velocity?
-```
-
-### Visual representations
-
-Visual representations help us interpret physical behavior at a glance. Graphs, motion diagrams, free-body diagrams, and vector sketches are all ways to make abstract ideas more concrete.
-- **Graphs** (e.g., position vs. time, velocity vs. time) reveal trends and allow for estimation of slopes and areas, which have physical meanings like velocity and displacement.
-- **Drawings** help illustrate the situation: what objects are involved, how they are moving, and what forces act on them.
-
-````{example} Base jumper: Free body diagram
-The situation is sketched in {numref}`fig:HailStoneFriction` using a Free body diagram. Note that all details of the jumper are ignored in the sketch.
-
-
-```{figure} ../figures/ch0_HailStoneFriction.svg
-:label: fig:HailStoneFriction
-:width: 30%
-:align: center
-:alt: A free body diagram of a base jumper of mass m, with downward velocity and gravitational force, and upward buoyant and friction force.
-
-Forces acting on the jumper. 
-```
-
-- $m$ = mass of jumper (in kg);  
-- $v$ = velocity of jumper (in m/s);  
-- $F_g$ = gravitational force (in N);  
-- $F_f$ = drag force by the air (in N);  
-- $F_b$ = buoyancy (in N): like in water also in air there is an upward force, equal to the weight of the displaced air.
-
-````
-
-### Equations
-
-Equations are the compact, symbolic expressions of physical relationships. They tell us how quantities like velocity, acceleration, force, and energy are connected.
-
-```{example} Base jumper: equations
-The forces acting on the jumper are already shown in {numref}`fig:HailStoneFriction`. Balancing of forces tells us that the jumper might reach a velocity such that the drag force and buoyancy exactly balance gravity and the jumper no longer accelerates:
-
-$$F_g = F_f + F_b$$
-
-We can specify each of the force:
-
-$$\begin{aligned}
-F_g &= - mg = -\rho_p V_p g\\
-F_f &= \frac{1}{2}\rho_{air}C_D A v^2\\
-F_b &= \rho_{air} V_p g
-\end{aligned}
+$$ \label{eq:fit_1}
+    V_{\text{gain}} = \frac{1}{\sqrt{1 + \left( 2\pi f \alpha \right)^2}}
 $$
 
-with $g$ the acceleration of gravity, $\rho_p$ the density of the jumper ($\approx 10^3 \mathrm{ kg/m}^3$), $V_p$ the volume of the jumper, $\rho_{air}$ the density of air ($\approx 1.2 \mathrm{ kg/m}^3$), $C_D$ the so-called drag coefficient, $A$ the frontal area of the jumper as seen by the air flowing past the jumper.
-```
+met $\alpha$ als onbekende. We verwachten $\alpha \approx R_0 \cdot C_0$. Voor het tweede orde filter fitten we de functie
 
-A physicist is able to switch between these representations, carefully considering which representations suits best for the given situation. We will practice these when solving problems.
+$$ \label{eq:fit_2}
+    V_{\text{gain}} = \frac{1}{\sqrt{ \left(2\pi f \beta \right)^2 + \left(1-2\pi^2f^2 \gamma \right)^2 }}
+$$
 
-```{danger}
-Note that in the example above we neglected directions. In our equation we should have been using vector notation, which we will cover in one of the next sections in this chapter.
-```
-
+met $\beta$ en $\gamma$ onbekend. We verwachten $\beta \approx R_1 \left[ C_1 + C_2 \right] + R_2 \cdot C_2$ en $\gamma \approx R_1 \cdot R_2 \cdot C_1 \cdot C_2$. In de fit wordt een initiële schatting van de verwachte orde grootte gegeven.

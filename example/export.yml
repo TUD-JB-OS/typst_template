@@ -32,14 +32,14 @@ project:
       papersize: a4
       margin_top: 2.5 #cm
       margin_bottom: 2.5 #cm
-      margin_left: 25 #%
+      margin_left: 15 #%
       margin_right: 15 #%
       show_pagenumber: true
 
       #### Fonts
       fontsize: 12
       fontstyle: 
-      linespacing: .3
+      linespacing: .5
       justification: false
       
       #### Theme
