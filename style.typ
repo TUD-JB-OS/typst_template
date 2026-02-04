@@ -20,6 +20,7 @@
   title: "Book Title",
   subtitle: none,
   authors: "Your name",
+  affiliations: (),
   date: none,
   abstract: none,
   cover: none,            // <— path to cover "images/cover.png"
@@ -102,27 +103,41 @@
   v(2em)
 
 // Author and Supervisor(s)
-  if authors != none {
-    let names = authors.split(", ").map(x => x.trim())
-    let main-author = names.at(0)
-    let supervisors = names.slice(1)
+
+if authors != none and authors.len() > 0 {
+  let main-author = authors.at(0)
+  let supervisors = authors.slice(1)
 
   let label = if supervisors.len() == 1 { "SUPERVISOR:" } else { "SUPERVISORS:" }
 
-
   grid(
     columns: (1fr, 1fr),
-    column-gutter: 2em,     
+    column-gutter: 2em,
     row-gutter: 0.6em,
     align: (right, left),
-    
 
-    [AUTHOR:], [#upper(main-author)], 
-    [#label],  [#upper(supervisors.join(", "))],
+    [AUTHOR:], [#upper(main-author.name)],
+
+    [#label], [
+      #upper(supervisors.map(s => s.name).join(", "))
+    ],
   )
 }
 
   v(1em)
+
+// print affilitation
+if affiliations.len() > 0 {
+  align(center)[
+    #text(size: 11pt, weight: "semibold")[
+      #upper(affiliations.map(a => a.name).join(", "))
+    ]
+  ]
+}
+
+
+
+//
   align(center, text(12pt, fill: gray.darken(50%), date))
   
   v(.5em)

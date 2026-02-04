@@ -16,10 +16,28 @@
   abstract:  "[-parts.abstract-]",
 [# endif #]
 
-// authors
-[# if doc.authors #]
-  authors: "[# for author in doc.authors #][- author.name -][# if not loop.last #], [# endif #][# endfor #]",
-[# endif #]
+ authors: (
+[# for author in doc.authors #](name: "[-author.name-]",
+  [# if author.orcid #]
+      orcid: "[-author.orcid-]",
+  [# endif #]
+  [# if author.affiliations #]
+      affiliations: "[#- for aff in author.affiliations -#][-aff.index-][#- if not loop.last -#],[#- endif -#][#- endfor -#]",
+  [# endif #]
+    ),
+[# endfor #]
+  ),
+
+  affiliations: (
+[# for aff in doc.affiliations #]
+    (
+      id: "[-aff.index-]",
+      name: "[-aff.name-]",
+    ),
+[# endfor #]
+  ),
+
+
 
 //date
 [# if doc.date #]

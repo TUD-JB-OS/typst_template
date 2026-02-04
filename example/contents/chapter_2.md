@@ -14,6 +14,11 @@ Physics problems and concepts can be represented in multiple ways, each offering
 A base jumper is used as context to get familiar with representation, picture from https://commons.wikimedia.org/wiki/File:04SHANG4963.jpg
 ```
 
+|Row 1|Row 2|
+|---|---|
+|some content | some more content|
+|a=b+2|c=3|
+
 ### Verbal descriptions
 
 Words are indispensable in physics. Language is used to describe a phenomenon, explain concepts, pose problems and interpret results. A good verbal description makes clear:

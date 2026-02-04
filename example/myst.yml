@@ -8,10 +8,14 @@ project:
   # keywords: []
   
   authors: 
-    - Freek Pols
-    - Supervisor 1
+    - name: Freek Pols
+      affiliations:
+        - TUD
+    - Alek
     - Supervisor 2
-
+  affiliations:
+    - id: TUD
+      institution: Delft University of Technology
   github: https://github.com/myst-templates/plain_typst_book
   
   date: 2025-09-20 
@@ -29,6 +33,7 @@ project:
   - file: README.md
   - file: contents/chapter_1.md
   - file: contents/chapter_2.md
+  - file: contents/chapter_3.ipynb
 
 extends:
   - export.yml
