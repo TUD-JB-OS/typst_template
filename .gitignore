@@ -1,2 +1,22 @@
-_build
+# Build outputs
+_build/
+exports/*.pdf
 *.pdf
+# MyST cache/state
+.myst/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Environment files
+.venv/
+.env
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

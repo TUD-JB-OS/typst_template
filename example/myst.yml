@@ -1,42 +1,36 @@
-# See docs at: https://mystmd.org/guide/frontmatter
 version: 1
+extends:
+  - config/people.yml
+  - config/options.yml
+  - config/exports/typst_config.yml
 project:
-  id: 95be6ed1-c602-4f30-b128-bc604678eac1
-  title: Some awesome Typst styled thesis
-  subtitle: an introduction to styling your thesis with Typst
-  # description:
-  # keywords: []
-  
-  authors: 
-    - name: Freek Pols
-      affiliations:
-        - TUD
-    - Alek
-    - Supervisor 2
-  affiliations:
-    - id: TUD
-      institution: Delft University of Technology
-  github: https://github.com/myst-templates/plain_typst_book
-  
-  date: 2025-09-20 
-
-  description: 
-
-  plugins:
-    - https://github.com/TUD-JB-Templates/JB2_plugins/releases/download/example/example.mjs
-    - https://github.com/TUD-JB-Templates/JB2_plugins/releases/download/iframe/iframe.mjs
-    - https://github.com/TUD-JB-Templates/JB2_plugins/releases/download/intermezzo/intermezzo.mjs
-    
-
+  title: Master Thesis
+  subtitle: Shared Template for MyST and Typst
+  date: 2026-02-22
+  parts:
+    abstract: content/parts/abstract.md
+    # preface: content/parts/preface.md
+    # acknowledgements: content/parts/acknowledgements.md
+    # dedication: content/parts/dedication.md
+    # colophon: content/parts/colophon.md
+  # keywords:
+  #   - myst
+  #   - typst
+  #   - thesis
+  license: CC-BY-4.0
+  doi: null
+  bibliography:
+    - reference.bib
 
   toc:
-  - file: README.md
-  - file: contents/chapter_1.md
-  - file: contents/chapter_2.md
-  - file: contents/chapter_3.ipynb
-
-extends:
-  - export.yml
+    - file: content/index.md
+    - file: content/chapters/01-introduction.md
+    - file: content/chapters/02-background.md
+    - file: content/chapters/03-methods.md
+    - file: content/chapters/04-results.md
+    - file: content/chapters/05-conclusion.md
+    - file: content/appendices/a-extra-data.md
+    - file: content/appendices/b-supplement.md
 
 site:
   template: book-theme
@@ -47,8 +41,8 @@ site:
 
   actions:
     - title: GitHub Repo
-      url: https://github.com/myst-templates/plain_typst_book
+      url: https://github.com/mmtop/myst_typst_V1
     - title: Feedback
-      url: https://github.com/myst-templates/plain_typst_book/issues
+      url: https://github.com/mmtop/myst_typst_V1/issues
     - title: Download PDF
       url: ./exports/plain_typst_book.pdf

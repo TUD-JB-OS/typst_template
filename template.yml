@@ -1,125 +1,127 @@
 jtex: v1
 kind: typst
-title: TUD LaTeX thesis template
-description:  A basic, Typst based, paper styled template for TUD Bachelor and Master thesis
+title: Master Thesis Typst Template for MyST
+description: A modular Typst template that consumes shared MyST metadata and parts.
 template: template.typ
-
-files:
-  - template.typ
-  - style.typ
-  - aside_style.typ
-  - LICENSE
-  
-authors:
-  - name: Freek Pols
-    github: FreekPols
-    affiliations:
-      - Delft University of Technology
-  - name: Luuk Fröling
-    github: luukfroling
-    affiliations:
-      - Delft University of Technology
 version: 0.1.0
 license: MIT
 tags:
-  - book
-# thumbnail: ./examples/pixels/files/screenshot.png
-github: https://github.com/TUD-JB-OS/typst_template
+  - thesis
+  - typst
+  - myst
+
+files:
+  - template.typ
+  - src/main.typ
+  - src/layout/cover.typ
+  - src/layout/titlepage.typ
+  - src/layout/frontmatter.typ
+  - src/layout/toc.typ
+  - src/components/headings.typ
+  - src/components/figures.typ
+  - src/components/tables.typ
+  - src/components/bibliography.typ
+  - src/theme/page.typ
+  - src/theme/typography.typ
+  - src/theme/colors.typ
+  - src/theme/spacing.typ
+  - docs/options.md
+  - docs/metadata-mapping.md
+  - LICENSE
+
 doc:
   - id: title
     required: true
+  - id: subtitle
   - id: authors
+    required: true
+  - id: contributors
+  - id: affiliations
     required: true
   - id: date
     required: true
-  - id: subtitle
-  - id: short_title
-  - id: open_access 
   - id: keywords
-  - id: doi
-  - id: venue
 
 parts:
   - id: abstract
+    required: true
+  - id: preface
   - id: acknowledgements
+  - id: dedication
+  - id: colophon
 
 options:
-  - id: kind
-    type: string
-    description: The "kind" of the content, e.g. "Original Research" - shown as the title of the margin content on the first page
-
-
-# Include a figure at the cover page
-  - id: cover
-    type: file
-    description: An image path that is shown in the front page
-  - id: coverposition
-    type: number
-    description: Sets the vertical position of the cover 
-  - id: cover_width
-    type: number
-    description: Sets the width of the coverfigure
-
-
-# ToC
-  - id: ToC_depth
-    type: number
-    description: number to set the depth of ToC
-  - id: show_ToC
+  - id: show_cover_full
     type: boolean
-    description: show ToC (default 1)
-
-# Page settings
+  - id: show_title_page
+    type: boolean
+  - id: show_contributor_affiliations
+    type: boolean
+  - id: show_toc
+    type: boolean
+  - id: show_list_of_figures
+    type: boolean
+  - id: show_list_of_tables
+    type: boolean
+  - id: frontmatter_numbering
+    type: string
+  - id: mainmatter_numbering
+    type: string
+  - id: paper_size
+    type: string
+  - id: margin_top_cm
+    type: number
+  - id: margin_bottom_cm
+    type: number
+  - id: margin_left_cm
+    type: number
+  - id: margin_right_cm
+    type: number
+  - id: font_body
+    type: string
+  - id: font_mono
+    type: string
+  - id: font_size_pt
+    type: number
+  - id: line_spacing_em
+    type: number
+  - id: toc_depth
+    type: number
   - id: logo
     type: file
-    description: An image path that is shown in the top right of the page
-  - id: logo_width
-    type: number
-    description: sets width of logo
-  - id: papersize
+  - id: cover_page_variant
     type: string
-    description: sets papersize
-  - id: show_pagenumber
+  - id: cover_background_image
+    type: file
+  - id: cover_title_box_opacity_pct
+    type: number
+  # Backward compatibility alias. Prefer cover_background_image.
+  - id: cover_image
+    type: file
+  - id: title_page_variant
+    type: string
+  - id: show_title_page_image
     type: boolean
-    description: shows page number (default 1)
-
-
-  # font
-  - id: fontstyle
+  - id: title_page_image
+    type: file
+  - id: title_page_image_anchor
     type: string
-    description: sets the font
-  - id: fontsize
+  - id: title_page_image_width_cm
     type: number
-    description: sets the fontsize
-  - id: margin_left
+  - id: title_page_image_height_cm
     type: number
-    description: sets margin left (as percentage)
-  - id: margin_right
+  - id: title_page_image_dx_cm
     type: number
-    description: sets margin right (as percentage)
-  - id: margin_top
+  - id: title_page_image_dy_cm
     type: number
-    description: sets margin top (in cm)
-  - id: margin_bottom
-    type: number
-    description: sets  margin bottom (in cm)
-  - id: linespacing
-    type: number
-    description: sets the linespancing (default 0.5 (em))
-  - id: justification
-    type: boolean
-    description: sets the justifcation 
-
- # theme style
-  - id: colortheme
+  - id: thesis_degree
     type: string
-    description: theme color 
-  - id: colorheadings
+  - id: thesis_program
     type: string
-    description: color of the headings
-
-# preface
-  - id: preface
+  - id: thesis_faculty
     type: string
-    description: a preface which is not included online
+  - id: thesis_institution
+    type: string
+  - id: thesis_defense_date
+    type: string
 
