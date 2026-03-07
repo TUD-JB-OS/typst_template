@@ -24,7 +24,7 @@ project:
       margin_left_cm: 3.0
       margin_right_cm: 2.0
       font_body: Libertinus Serif
-      font_mono: Consolas
+      font_mono: DejaVu Sans Mono
       font_size_pt: 11
       line_spacing_em: 1
       

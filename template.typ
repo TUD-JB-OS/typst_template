@@ -141,7 +141,7 @@
   margin_right_cm: [# if options.margin_right_cm #][-options.margin_right_cm-]cm[# else #]2.0cm[# endif #],
 
   font_body: "[# if options.font_body #][-options.font_body-][# else #]Libertinus Serif[# endif #]",
-  font_mono: "[# if options.font_mono #][-options.font_mono-][# else #]Consolas[# endif #]",
+  font_mono: "[# if options.font_mono #][-options.font_mono-][# else #]DejaVu Sans Mono[# endif #]",
   font_size_pt: [# if options.font_size_pt #][-options.font_size_pt-]pt[# else #]11pt[# endif #],
   line_spacing_em: [# if options.line_spacing_em #][-options.line_spacing_em-]em[# else #]1.35em[# endif #],
 
