@@ -10,7 +10,7 @@ This project keeps one shared metadata source for MyST and Typst while isolating
 - Shared semantics: `myst.yml`, `config/options.yml`, `config/people.yml`, and `content/parts/*.md`
 - Thesis semantic fields live under `project.options.thesis_*`; people are in `project.authors` (students) and `project.contributors` (use `supervisor-*` / `committee-*` IDs).
 - PDF layout knobs: `config/exports/typst_config.yml`
-- Cover options are split from title-page options (`cover_background_image` vs `title_page_image`).
-- Variant entry points exist in `templates/thesis-typst/src/layout/cover.typ` and `templates/thesis-typst/src/layout/titlepage.typ`.
+- Cover, title-page, and colophon options are kept separate in the Typst export config.
+- Variant entry points exist in `templates/thesis-typst/src/layout/cover.typ` and `templates/thesis-typst/src/layout/titlepage.typ`; the automated publication colophon lives in `templates/thesis-typst/src/layout/colophon.typ`.
 - Typst rendering logic: `templates/thesis-typst/src/*`
 - Part-file references for export are declared in `myst.yml` via `project.parts.*`.

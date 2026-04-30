@@ -1,24 +1,25 @@
 version: 1
 extends:
-  - config/people.yml
-  - config/options.yml
-  - config/exports/typst_config.yml
+  - people.yml
+  - options.yml
+  - typst_export_config.yml
 project:
-  title: Master Thesis
-  subtitle: Shared Template for MyST and Typst
+  title: Typst Template Example for Student End Projects made with MyST 
+  subtitle: Shared Template for MyST and Typst for Thesis and Academic Writing Projects at TU Delft
   date: 2026-02-22
   parts:
+    # colophon: content/parts/colophon.md
+    acknowledgements: content/parts/acknowledgements.md
     abstract: content/parts/abstract.md
     # preface: content/parts/preface.md
-    # acknowledgements: content/parts/acknowledgements.md
     # dedication: content/parts/dedication.md
-    # colophon: content/parts/colophon.md
-  # keywords:
+
+  keywords: [myst, typst, thesis template, front matter, metadata mapping, academic writing workflow, document automation]
   #   - myst
   #   - typst
   #   - thesis
   license: CC-BY-4.0
-  doi: null
+  doi: doi:10.5181/typst.12345678
   bibliography:
     - reference.bib
 
@@ -29,6 +30,8 @@ project:
     - file: content/chapters/03-methods.md
     - file: content/chapters/04-results.md
     - file: content/chapters/05-conclusion.md
+    # Appendices are currently handled like regular late chapters,
+    # so they stay in the same table-of-contents list.
     - file: content/appendices/a-extra-data.md
     - file: content/appendices/b-supplement.md
 
@@ -45,4 +48,4 @@ site:
     - title: Feedback
       url: https://github.com/mmtop/myst_typst_V1/issues
     - title: Download PDF
-      url: ./exports/plain_typst_book.pdf
+      url: ./exports/typst_template_example.pdf

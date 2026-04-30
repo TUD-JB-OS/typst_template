@@ -7,6 +7,18 @@ It explores the utilization of Jupyter Book 2 and the MyST Document Stack as a m
 ## Background
 In recent years, there has been a growing interest in [insert research topic]. This is due to [insert reasons for interest]. Despite the increasing attention, there are still gaps in the existing literature that need to be addressed. This research aims to fill those gaps by [insert research objectives].
 
+```{figure} fig.png
+
+With huge caption?
+```
+
+### subsubsection
+
+Just to test toc depth.
+
 ## Research Problem
 The main research problem addressed in this thesis is [insert research problem]. This problem is significant because [insert reasons for significance]. Addressing this problem will contribute to a better understanding of [insert related field or topic].
 
+Here is an equation:
+
+$$ F = m \cdot a $$

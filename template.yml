@@ -1,7 +1,7 @@
 jtex: v1
 kind: typst
-title: Master Thesis Typst Template for MyST
-description: A modular Typst template that consumes shared MyST metadata and parts.
+title: Thesis Typst Template for MyST
+description: A modular Typst thesis template for MyST projects, with configurable cover, title page, front matter, and bibliography.
 template: template.typ
 version: 0.1.0
 license: MIT
@@ -11,117 +11,313 @@ tags:
   - myst
 
 files:
+  # Core template entry points
   - template.typ
   - src/main.typ
+
+  # Default bundled assets
+  - src/assets/assets.typ
+  - src/assets/brand_assets/logo.svg
+  - src/assets/brand_assets/international-logo_black_rgb.svg
+  - src/assets/brand_assets/international-logo_white_rgb.svg
+  - src/assets/template_figures/defaultcover.jpg
+
+  # Optional bundled STIX fonts
+  - src/assets/fonts/STIX_Two_Math/OFL.txt
+  - src/assets/fonts/STIX_Two_Math/static/STIXTwoMath-Regular.ttf
+  - src/assets/fonts/STIX_Two_Text/OFL.txt
+  - src/assets/fonts/STIX_Two_Text/static/STIXTwoText-Bold.ttf
+  - src/assets/fonts/STIX_Two_Text/static/STIXTwoText-BoldItalic.ttf
+  - src/assets/fonts/STIX_Two_Text/static/STIXTwoText-Italic.ttf
+  - src/assets/fonts/STIX_Two_Text/static/STIXTwoText-Medium.ttf
+  - src/assets/fonts/STIX_Two_Text/static/STIXTwoText-MediumItalic.ttf
+  - src/assets/fonts/STIX_Two_Text/static/STIXTwoText-Regular.ttf
+  - src/assets/fonts/STIX_Two_Text/static/STIXTwoText-SemiBold.ttf
+  - src/assets/fonts/STIX_Two_Text/static/STIXTwoText-SemiBoldItalic.ttf
+
+  # Layout modules
   - src/layout/cover.typ
   - src/layout/titlepage.typ
   - src/layout/frontmatter.typ
-  - src/layout/toc.typ
-  - src/components/headings.typ
-  - src/components/figures.typ
-  - src/components/tables.typ
-  - src/components/bibliography.typ
-  - src/theme/page.typ
-  - src/theme/typography.typ
-  - src/theme/colors.typ
-  - src/theme/spacing.typ
-  - docs/options.md
-  - docs/metadata-mapping.md
+  - src/layout/colophon.typ
+  - src/layout/bibliography.typ
+
+  # Template license file
   - LICENSE
 
 doc:
+  # Shared MyST metadata consumed by the template
   - id: title
     required: true
+    description: "Main document title shown on the cover and title page."
   - id: subtitle
+    description: "Optional subtitle shown under the main title on the cover and title page."
   - id: authors
     required: true
+    description: "Document author list, usually the student name or names."
   - id: contributors
+    description: "Optional contributors such as supervisors or committee members. On the detailed title-page layouts, ids like supervisor-1 or committee-1 are used to group them."
   - id: affiliations
-    required: true
+    description: "Optional affiliation list. Also used to resolve affiliation names for contributors on the title page."
   - id: date
-    required: true
+    description: "Optional document/publication date shown in the colophon when provided."
+  - id: doi
+    description: "Optional document DOI shown in the colophon publication table when provided."
+  - id: license
+    description: "Optional document license shown in the colophon publication table when provided."
   - id: keywords
+    description: "Optional keyword list shown below the abstract."
 
 parts:
+  # Optional front-matter part files 
   - id: abstract
-    required: true
+    description: "Abstract text rendered on the opening front-matter page."
   - id: preface
+    description: "Optional preface page rendered before the main chapters."
   - id: acknowledgements
+    description: "Optional acknowledgements page rendered before the main chapters."
   - id: dedication
+    description: "Optional dedication page rendered before the main chapters."
   - id: colophon
+    description: "Optional custom text rendered at the top of the colophon page before the automated publication block."
 
 options:
+  # Document structure and front matter
   - id: show_cover_full
     type: boolean
+    description: "Render a separate cover page before the title page. Default: true."
   - id: show_title_page
     type: boolean
+    description: "Render the title page after the cover page. Default: true."
   - id: show_contributor_affiliations
     type: boolean
+    description: "Show affiliation lines under supervisor and committee names on the detailed title-page layouts. Default: true."
+  - id: frontmatter_order
+    type: string
+    description: "Comma-separated order for fixed front-matter part pages before the table of contents. Accepted values: colophon, abstract, preface, acknowledgements, and dedication. Omitted values are appended in the default order, which starts with colophon."
   - id: show_toc
     type: boolean
-  - id: show_list_of_figures
-    type: boolean
-  - id: show_list_of_tables
-    type: boolean
-  - id: frontmatter_numbering
-    type: string
-  - id: mainmatter_numbering
-    type: string
-  - id: paper_size
-    type: string
-  - id: margin_top_cm
-    type: number
-  - id: margin_bottom_cm
-    type: number
-  - id: margin_left_cm
-    type: number
-  - id: margin_right_cm
-    type: number
-  - id: font_body
-    type: string
-  - id: font_mono
-    type: string
-  - id: font_size_pt
-    type: number
-  - id: line_spacing_em
-    type: number
+    description: "Render the table of contents in the front matter. Default: true."
   - id: toc_depth
     type: number
+    description: "Maximum heading depth shown in the table of contents. Default: 2."
+  - id: show_list_of_figures
+    type: boolean
+    description: "Render a list of figures in the front matter. Default: false."
+  - id: show_list_of_tables
+    type: boolean
+    description: "Render a list of tables in the front matter. Default: false."
+  - id: show_verso_blank_page_statement
+    type: boolean
+    description: "When an extra verso page is needed before the main matter, print a conventional blank-page statement instead of leaving it empty. Default: false."
+  - id: verso_blank_page_statement
+    type: string
+    description: "Statement printed on the inserted verso page when show_verso_blank_page_statement is true. Default: This page is intentionally left blank."
+
+  # Bibliography
+  - id: show_bibliography
+    type: boolean
+    description: "Render the bibliography section after the document content. Default: true."
+  - id: bibliography_title
+    type: string
+    description: "Title used for the bibliography section. Default: Bibliography."
+  - id: bibliography_style
+    type: string
+    description: "Bibliography style passed to Typst, for example ieee, apa, mla, chicago-author-date, or chicago-notes. Default: chicago-author-date."
+  - id: bibliography_numbered_heading
+    type: boolean
+    description: "Number the bibliography as a top-level heading. Default: false."
+
+  # Page layout
+  - id: paper_size
+    type: string
+    description: "Paper size for the whole document. Default: a4. Common values include a4 and us-letter."
+  - id: margin_top_cm
+    type: number
+    description: "Top page margin in centimeters. Default: 2.5."
+  - id: margin_bottom_cm
+    type: number
+    description: "Bottom page margin in centimeters. Default: 2.5."
+  - id: margin_left_cm
+    type: number
+    description: "Left page margin in centimeters. Default: 2.5."
+  - id: margin_right_cm
+    type: number
+    description: "Right page margin in centimeters. Default: 2.5."
+
+  # Typography
+  - id: font_body
+    type: string
+    description: "Body font family. Default: Libertinus Serif."
+  - id: font_mono
+    type: string
+    description: "Monospace font family for code and raw blocks. Default: DejaVu Sans Mono."
+  - id: font_math
+    type: string
+    description: "Math font family for equations. Default: New Computer Modern Math."
+  - id: font_size_pt
+    type: number
+    description: "Base text size in points. Default: 11."
+  - id: line_spacing_em
+    type: number
+    description: "Paragraph leading in em units. Default: 0.7."
+
+  # Branding and shared assets
   - id: logo
     type: file
+    description: "Shared TU logo used on the title page, colophon, and as a fallback on the graphical cover. If omitted, the bundled template logo is used."
+  - id: isbn
+    type: string
+    description: "Optional ISBN project option shown in the colophon publication table when provided."
+
+  # Cover page
   - id: cover_page_variant
     type: string
+    description: "Cover-page layout. Accepted values: 1/simple, 2/graphical, 3/custom. Default: simple."
+  - id: show_cover_subtitle
+    type: boolean
+    description: "Show the document subtitle on the cover page. Applies to both simple and graphical cover variants. Default: true."
   - id: cover_background_image
     type: file
-  - id: cover_title_box_opacity_pct
-    type: number
-  # Backward compatibility alias. Prefer cover_background_image.
+    description: "Background image for the graphical cover variant. If omitted, the bundled template cover image is used."
   - id: cover_image
     type: file
+    description: "Legacy alias for cover_background_image."
+  - id: cover_graphical_appearance
+    type: string
+    description: "Graphical-cover contrast preset. Accepted values: white-on-dark or black-on-light. Default: white-on-dark."
+  - id: cover_graphical_alignment
+    type: string
+    description: "Graphical-cover alignment for the title box and bottom branding block. Accepted values: left or center. Default: left."
+  - id: cover_title_text_color
+    type: string
+    description: "Optional override for graphical-cover title, subtitle, and author text color. Accepted values: white, black, or a hex color like #f5f5f5."
+  - id: cover_title_weight
+    type: string
+    description: "Optional font weight for the graphical-cover title. Passed directly to Typst, for example regular, medium, bold, light, or extralight."
+  - id: cover_subtitle_weight
+    type: string
+    description: "Optional font weight for the graphical-cover subtitle. Passed directly to Typst, for example regular, medium, bold, light, or extralight."
+  - id: cover_author_weight
+    type: string
+    description: "Optional font weight for the graphical-cover author line. Passed directly to Typst, for example regular, medium, bold, light, or extralight."
+  - id: cover_bottom_text_color
+    type: string
+    description: "Optional override for graphical-cover text shown outside the title box, such as logo text or the institution line. Accepted values: white, black, or a hex color like #f5f5f5."
+  - id: cover_title_box_color
+    type: string
+    description: "Optional override for the graphical-cover translucent title-box base color. Accepted values: black, white, or a hex color like #f5f5f5."
+  - id: cover_title_box_text
+    type: string
+    description: "Optional extra text shown in the graphical-cover title box below the author line. Newlines are preserved."
+  - id: cover_title_box_opacity_pct
+    type: number
+    description: "Opacity of the title box on the graphical cover, from 0 to 100. Default: 55."
+  - id: show_cover_bottom_ribbon
+    type: boolean
+    description: "Show a translucent ribbon behind the graphical-cover bottom logo/text cluster. Default: false."
+  - id: cover_bottom_ribbon_color
+    type: string
+    description: "Optional base color for the graphical-cover bottom ribbon. Accepted values: black, white, or a hex color like #101820. Defaults to the title-box color."
+  - id: cover_bottom_ribbon_opacity_pct
+    type: number
+    description: "Opacity of the graphical-cover bottom ribbon, from 0 to 100. Default: 55."
+  - id: cover_logo_variant
+    type: string
+    description: "Optional override for the bundled graphical-cover logo variant. Accepted values: white or black."
+  - id: cover_logo_white
+    type: file
+    description: "Optional file path for the white logo used by the graphical cover."
+  - id: cover_logo_black
+    type: file
+    description: "Optional file path for the black logo used by the graphical cover."
+  - id: cover_logo_text
+    type: string
+    description: "Optional small text shown below the graphical-cover logo. Newlines are preserved."
+  - id: cover_bottom_block_dy_cm
+    type: number
+    description: "Optional vertical offset for the graphical-cover bottom logo/text block in centimeters. Default: -1.2."
+
+  # Title page
   - id: title_page_variant
     type: string
-  - id: show_title_page_image
-    type: boolean
-  - id: title_page_image
-    type: file
-  - id: title_page_image_anchor
+    description: "Title-page layout. Accepted values: 1/basic, 2/formal, 3/custom. Default: basic. The legacy value simple is still accepted as an alias for basic."
+  - id: title_page_basic_title_alignment
     type: string
-  - id: title_page_image_width_cm
-    type: number
-  - id: title_page_image_height_cm
-    type: number
-  - id: title_page_image_dx_cm
-    type: number
-  - id: title_page_image_dy_cm
-    type: number
+    description: "Alignment of the title and subtitle block in the basic/simple title-page layout. Accepted values: left or center. Default: center."
+  - id: title_page_basic_table_alignment
+    type: string
+    description: "Alignment of the metadata table in the basic/simple title-page layout. Accepted values: left or center. Default: left."
+  - id: title_page_logo_alignment
+    type: string
+    description: "Alignment of the title-page logo in the basic/simple layout. Accepted values: left or center. Default: center. The formal layout stays centered; the custom stub ignores this option."
+  - id: show_title_page_cover_description
+    type: boolean
+    description: "Legacy alias for show_colophon_cover_description. The cover description is now rendered in the colophon publication table."
+  - id: title_page_cover_description
+    type: string
+    description: "Legacy alias for colophon_cover_description."
+  - id: show_title_page_confidentiality_statement
+    type: boolean
+    description: "Legacy alias for show_colophon_confidentiality_statement. The confidentiality statement is now rendered in the colophon."
+  - id: title_page_confidentiality_statement
+    type: string
+    description: "Legacy alias for colophon_confidentiality_statement."
+  - id: title_page_formal_statement
+    type: string
+    description: "Full statement text for the formal title-page layout. Supports placeholders like $thesis_degree or {thesis_degree}; placeholders are replaced from mapped thesis metadata fields. If omitted, no formal statement is rendered."
+
+  # Colophon
+  - id: show_colophon_publication_info
+    type: boolean
+    description: "Show the automated colophon publication table when publication values are present. Default: true."
+  - id: show_colophon_cover_description
+    type: boolean
+    description: "Show the optional cover description row in the colophon publication table. Default: false."
+  - id: colophon_cover_description
+    type: string
+    description: "Text used for the optional cover row in the colophon publication table, for example a short note about the cover image."
+  - id: show_colophon_confidentiality_statement
+    type: boolean
+    description: "Show the optional confidentiality statement above the colophon publication table. Default: false."
+  - id: colophon_confidentiality_statement
+    type: string
+    description: "Text used for the optional colophon confidentiality statement. Default: This thesis is confidential and cannot be made public."
+  - id: colophon_printer
+    type: string
+    description: "Optional printer line shown in the colophon publication table."
+  - id: colophon_publisher
+    type: string
+    description: "Optional publisher line shown in the colophon publication table."
+  - id: colophon_copyright
+    type: string
+    description: "Optional copyright line shown in the colophon publication table."
+  - id: colophon_custom_text
+    type: string
+    description: "Optional custom text shown below the colophon publication table and above the template watermark."
+  - id: colophon_company_logo
+    type: file
+    description: "Optional company logo shown opposite the shared TU logo above the colophon publication table."
+  - id: show_colophon_watermark
+    type: boolean
+    description: "Show the MyST/Typst/JBOS template watermark note at the bottom of the colophon. Default: true."
+
+  # Formal title-page metadata
   - id: thesis_degree
     type: string
+    description: "Degree line shown on the detailed title-page layouts, for example Master of Science."
   - id: thesis_program
     type: string
+    description: "Program or department line shown on the detailed title-page layouts."
+  - id: thesis_track
+    type: string
+    description: "Optional track or specialization line shown on the title page."
   - id: thesis_faculty
     type: string
+    description: "Faculty line shown on the detailed title-page layouts."
   - id: thesis_institution
     type: string
+    description: "Institution line shown on the detailed title-page layouts."
   - id: thesis_defense_date
     type: string
-
+    description: "Full defense date line shown on the detailed title-page layouts."
