@@ -191,7 +191,7 @@
     #v(0.45em)
     #set par(justify: false, first-line-indent: 0pt)
     #text(size: 8.5pt, fill: rgb("#666666"))[
-      Made with #link("https://mystmd.org")[MyST] and #link("https://typst.app")[Typst] using the #link("https://github.com/mmtop/myst_typst_V1")[JBOS MyST Typst template].
+      Made with #link("https://mystmd.org")[MyST] and #link("https://typst.app")[Typst] using the #link("https://jboss.tudelft.nl")[JBOSS Typst template].
     ]
   ]
 }
