@@ -19,7 +19,7 @@ project:
   #   - typst
   #   - thesis
   license: CC-BY-4.0
-  doi: doi:10.5181/typst.12345678
+  doi: doi:10.5181/typst.12345678/exampledoi
   bibliography:
     - reference.bib
 
