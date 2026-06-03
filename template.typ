@@ -1,4 +1,5 @@
 #import "src/main.typ": thesis_template
+#import "@preview/muchpdf:0.1.2": muchpdf
 
 // Use this file as the mapping layer between MyST data and the Typst layout.
 // It should stay as thin as possible:
