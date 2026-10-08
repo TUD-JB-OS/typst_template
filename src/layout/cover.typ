@@ -156,6 +156,16 @@
   }
 }
 
+#let resolve_cover_logo_alignment(value) = {
+  let normalized = str(value)
+  if normalized == "left" or normalized == "center" {
+    normalized
+  } else {
+    panic("Invalid cover_logo_alignment '" + normalized + "'. Use 'left' or 'center'.")
+  }
+}
+
+
 #let resolve_cover_opacity_pct(value) = {
   if value < 0 {
     0
@@ -175,6 +185,7 @@
   bottom_ribbon_color: none,
   bottom_ribbon_opacity_pct: 55,
   page_alignment: "left",
+  cover_logo_alignment: "left",
   logo_variant: none,
   logo: none,
   logo_white: none,
@@ -230,6 +241,7 @@
     title_text_fill: resolve_cover_color_fill(title_color, "cover_title_text_color"),
     bottom_text_fill: resolve_cover_color_fill(bottom_color, "cover_bottom_text_color"),
     page_alignment: resolve_cover_alignment(page_alignment),
+    logo_alignment: resolve_cover_logo_alignment(cover_logo_alignment),
     logo: resolved_logo,
   )
 }
@@ -265,6 +277,7 @@
   author_weight: "regular",
   show_subtitle: true,
   page_alignment: "left",
+  logo_alignment: "left",
   title_box_text: none,
   logo_text: none,
   show_bottom_ribbon: false,
@@ -291,6 +304,7 @@
     let resolved_title_text_fill = if title_text_fill == auto { white } else { title_text_fill }
     let resolved_bottom_text_fill = if bottom_text_fill == auto { resolved_title_text_fill } else { bottom_text_fill }
     let resolved_content_alignment = if str(page_alignment) == "center" { center } else { left }
+    let resolved_logo_alignment = if str(logo_alignment) == "center" { center } else { left }
     let render_logo_text = logo_text != none and logo_text != ""
 
     // Background image.
@@ -328,7 +342,7 @@
     // Bottom block: logo and optional small text.
     if logo != none or render_logo_text {
       let bottom_block = [
-        #align(resolved_content_alignment, [
+        #align(resolved_logo_alignment, [
           #if logo != none [
             #image(
               logo,
@@ -402,6 +416,7 @@
   author_weight: "regular",
   show_subtitle: true,
   page_alignment: "left",
+  cover_logo_alignment: "left",
   title_box_text: none,
   logo_text: none,
   logo_variant: none,
@@ -429,6 +444,7 @@
       bottom_ribbon_color: bottom_ribbon_color,
       bottom_ribbon_opacity_pct: bottom_ribbon_opacity_pct,
       page_alignment: page_alignment,
+      cover_logo_alignment: cover_logo_alignment,
       logo_variant: logo_variant,
       logo: resolved_logo,
       logo_white: resolved_logo_white,
@@ -452,6 +468,7 @@
       author_weight: author_weight,
       show_subtitle: show_subtitle,
       page_alignment: resolved.page_alignment,
+      logo_alignment: resolved.logo_alignment,
       title_box_text: title_box_text,
       logo_text: logo_text,
       show_bottom_ribbon: show_bottom_ribbon,

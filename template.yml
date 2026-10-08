@@ -189,6 +189,9 @@ options:
   - id: cover_graphical_alignment
     type: string
     description: "Graphical-cover alignment for the title box and bottom branding block. Accepted values: left or center. Default: left."
+  - id: cover_logo_alignment
+    type: string
+    description: "Graphical-cover alignment for the logo in the bottom branding block. Accepted values: left or center. Default: left."
   - id: cover_title_text_color
     type: string
     description: "Optional override for graphical-cover title, subtitle, and author text color. Accepted values: white, black, or a hex color like #f5f5f5."
