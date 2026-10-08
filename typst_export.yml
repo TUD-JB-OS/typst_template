@@ -177,8 +177,11 @@ project:
       # Graphical-cover contrast preset: white-on-dark | black-on-light. Default: white-on-dark.
       cover_graphical_appearance: white-on-dark
       
-      # Graphical-cover alignment for the title box and bottom branding block: left | center. Default: left.
-      cover_graphical_alignment: center
+      # Graphical-cover alignment for the title box: left | center. Default: left.
+      cover_graphical_alignment: left
+
+      # Graphical-cover alignment for the bottom branding block: left | center. Default: left.
+      cover_logo_alignment: left
       
       # Optional override for the translucent title-box base color: black | white | hex color.
       # cover_title_box_color: "#101820"

@@ -326,6 +326,9 @@
 [# if options.cover_graphical_alignment is defined and options.cover_graphical_alignment != none and options.cover_graphical_alignment != "" #]
   cover_graphical_alignment: "[-options.cover_graphical_alignment-]",
 [# endif #]
+[# if options.cover_logo_alignment is defined and options.cover_logo_alignment != none and options.cover_logo_alignment != "" #]
+  cover_logo_alignment: "[-options.cover_logo_alignment-]",
+[# endif #]
 [# if options.cover_title_text_color is defined and options.cover_title_text_color != none and options.cover_title_text_color != "" #]
   cover_title_text_color: "[-options.cover_title_text_color-]",
 [# endif #]
