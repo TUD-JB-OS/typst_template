@@ -1,8 +1,5 @@
 version: 1
-extends:
-  - people.yml
-  - options.yml
-  - typst_export_config.yml
+
 project:
   title: Typst Template Example for Student End Projects made with MyST 
   subtitle: Shared Template for MyST and Typst for Thesis and Academic Writing Projects at TU Delft
@@ -35,6 +32,11 @@ project:
     - file: content/appendices/a-extra-data.md
     - file: content/appendices/b-supplement.md
 
+extends:
+  - people.yml
+  - options.yml
+  - typst_export_config.yml
+  
 site:
   template: book-theme
   options:
