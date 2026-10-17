@@ -1,7 +1,7 @@
 version: 1
 
 project:
-  title: Typst Template Example for Student End Projects made with MyST 
+  title: TU Delft Typst Thesis Template 
   subtitle: Shared Template for MyST and Typst for Thesis and Academic Writing Projects at TU Delft
   date: 2026-02-22
   parts:
