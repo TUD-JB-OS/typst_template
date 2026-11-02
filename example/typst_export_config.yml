@@ -11,14 +11,11 @@ project:
 # ==============================================================================
 # Document Structure and Front Matter
 # ==============================================================================
-      # Render a separate cover page before the title page. Default: true.
-      show_cover_full: true
       
-      # Render the title page after the cover page. Default: true.
-      show_title_page: true
-      
-      # Show affiliation lines under supervisor and committee names on the detailed title-page layouts. Default: true.
-      show_contributor_affiliations: true
+      show_cover_full: true               # Render a separate cover page before the title page. Default: true.
+      show_title_page: true               # Render the title page after the cover page. Default: true.
+      show_contributor_affiliations: true # Show affiliation lines under supervisor and committee names. Default: true.
+
 
       # Order of fixed front-matter part pages before the table of contents.
       # Part files are still declared in myst.yml under project.parts; this
@@ -30,17 +27,11 @@ project:
 # ==============================================================================
 # Table of Contents and Lists of Figures/Tables
 # ==============================================================================
-      # Render the table of contents in the front matter. Default: true.
-      show_toc: true
-      
-      # Maximum heading depth shown in the table of contents. Default: 2.
-      toc_depth: 2
-      
-      # Render a list of figures in the front matter. Default: false.
-      show_list_of_figures: false
-      
-      # Render a list of tables in the front matter. Default: false.
-      show_list_of_tables: false
+      show_toc: true                 # Render the table of contents in the front matter. Default: true.
+      toc_depth: 2                   # Maximum heading depth shown in the table of contents. Default: 2.
+      show_list_of_figures: false    # Render a list of figures in the front matter. Default: false.
+      show_list_of_tables: false     # Render a list of tables in the front matter. Default: false.
+
 
 # ==============================================================================
 # Verso Page Options (for main matter chapters)
@@ -50,26 +41,17 @@ project:
       # When the page statement is enabled, the inserted verso page displays
       # the statement below instead of remaining fully blank. Default: false.
       show_verso_blank_page_statement: true
-      
-      # Statement printed on the inserted verso page.
-      verso_blank_page_statement: This page is intentionally left blank.
+      verso_blank_page_statement: This page is intentionally left blank. # Statement printed on the inserted verso page.
+
 
 # ==============================================================================
 # Bibliography Options 
 # ==============================================================================
-      # Render the bibliography section after the document content. Default: true.
-      show_bibliography: true
-           
-      # Title used for the bibliography section. Default: Bibliography.
-      bibliography_title: Bibliography
-      
-      # Bibliography style passed to Typst. Default: chicago-author-date.
-      # Common built-in Typst styles include:
-      # ieee | apa | mla | chicago-author-date | chicago-notes
-      bibliography_style: chicago-author-date
-      
-      # Number the bibliography as a top-level heading. Default: false.
-      bibliography_numbered_heading: false
+      show_bibliography: true                 # Render the bibliography section after the document content. Default: true.
+      bibliography_title: Bibliography        # Title used for the bibliography section. Default: Bibliography.
+      bibliography_style: chicago-author-date # Bibliography style passed to Typst. Options: ieee | apa | mla | chicago-author-date | chicago-notes
+      bibliography_numbered_heading: false    # Number the bibliography as a top-level heading. Default: false.
+
 
 # ==============================================================================
 # Page Layout and Styling
@@ -269,7 +251,9 @@ project:
       # Note: Legacy aliases show_title_page_cover_description, title_page_cover_description,
       # show_title_page_confidentiality_statement, and title_page_confidentiality_statement
       # are still accepted but refer to the colophon equivalents below.
-
+      
+      
+      # logo_titlepage_width: 3.9cm
 # ==============================================================================
 # Colophon Options
 # ==============================================================================

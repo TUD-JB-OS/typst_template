@@ -688,6 +688,8 @@
   basic_title_alignment: "center",
   basic_table_alignment: "left",
   logo_alignment: "center",
+  logo_titlepage_width: 3.9cm,
+  
 ) = {
   let mode = resolve_title_page_variant(variant)
   let resolved_title = resolve_title_page_title(title)
@@ -720,7 +722,7 @@
       } else {
         bottom + center
       }
-      place(logo_anchor, dy: -logo_bottom_offset, image(logo, width: 1.9cm))
+      place(logo_anchor, dy: -logo_bottom_offset, image(logo, width: logo_titlepage_width))
     }
 
     if mode == "basic" {

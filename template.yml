@@ -269,6 +269,12 @@ options:
   - id: title_page_formal_statement
     type: string
     description: "Full statement text for the formal title-page layout. Supports placeholders like $thesis_degree or {thesis_degree}; placeholders are replaced from mapped thesis metadata fields. If omitted, no formal statement is rendered."
+  - id: logo_titlepage_width
+    type: string
+    description: "Width of the logo in the title page. Default: 3.9cm."
+  - id: title_font
+    type: string
+    description: "Optional override for the title font on the title page. Default: arial."
 
   # Colophon
   - id: show_colophon_publication_info

@@ -115,6 +115,8 @@
   title_page_basic_table_alignment: "left",
   title_page_logo_alignment: "center",
   title_page_formal_statement: none,
+  logo_titlepage_width: 3.9cm,
+  title_font: "arial",
 
   // Colophon.
   show_colophon_publication_info: true,
@@ -324,6 +326,7 @@
       title_box_color: cover_title_box_color,
       title_box_opacity_pct: cover_title_box_opacity_pct,
       title_weight: cover_title_weight,
+      title_font: title_font,
       subtitle_weight: cover_subtitle_weight,
       author_weight: cover_author_weight,
       show_subtitle: show_cover_subtitle,

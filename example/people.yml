@@ -2,7 +2,7 @@ version: 1
 project:
   authors:
     - id: student
-      name: Student Name
+      name: Freek Pols
       affiliations:
         - tud
 

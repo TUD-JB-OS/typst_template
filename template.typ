@@ -394,6 +394,13 @@
 [# if options.title_page_formal_statement is defined and options.title_page_formal_statement != none and options.title_page_formal_statement != "" #]
   title_page_formal_statement: "[-options.title_page_formal_statement | replace("\\", "\\\\") | replace("\"", "\\\"") | replace("\n", "\\n")-]",
 [# endif #]
+[# if options.logo_titlepage_width is defined and options.logo_titlepage_width != none and options.logo_titlepage_width != "" #]
+  logo_titlepage_width: [-options.logo_titlepage_width-],
+[# endif #]
+[# if options.title_font is defined and options.title_font != none and options.title_font != "" #]
+  title_font: "[-options.title_font-]",
+[# endif #]
+
 
   // Colophon options
 [# if options.show_colophon_publication_info is defined #]

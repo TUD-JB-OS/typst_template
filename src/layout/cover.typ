@@ -268,11 +268,12 @@
   subtitle: none,
   authors: (),
   image_path: none,
-  title_box_opacity_pct: 55,
+  title_box_opacity_pct: 80,
   box_fill: auto,
   title_text_fill: auto,
   bottom_text_fill: auto,
   title_weight: "regular",
+  title_font: "arial",
   subtitle_weight: "regular",
   author_weight: "regular",
   show_subtitle: true,
@@ -319,7 +320,7 @@
       fill: resolved_box_fill,
     )[
       #align(resolved_content_alignment, [
-        #text(fill: resolved_title_text_fill, size: 40pt, weight: title_weight, title)
+        #text(font: title_font, fill: resolved_title_text_fill, size: 40pt, weight: title_weight, title)
 
         #if show_subtitle and subtitle != none and subtitle != "" [
           #v(0.5em)
@@ -412,6 +413,7 @@
   bottom_ribbon_color: none,
   bottom_ribbon_opacity_pct: 55,
   title_weight: "regular",
+  title_font: "arial",
   subtitle_weight: "regular",
   author_weight: "regular",
   show_subtitle: true,
@@ -464,6 +466,7 @@
       title_text_fill: resolved_title_text_fill,
       bottom_text_fill: resolved_bottom_text_fill,
       title_weight: title_weight,
+      title_font: title_font,
       subtitle_weight: subtitle_weight,
       author_weight: author_weight,
       show_subtitle: show_subtitle,

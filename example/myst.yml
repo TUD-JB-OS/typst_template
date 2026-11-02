@@ -2,7 +2,7 @@ version: 1
 
 project:
   title: TU Delft Typst Thesis Template 
-  subtitle: Shared Template for MyST and Typst for Thesis and Academic Writing Projects at TU Delft
+  subtitle: Template for MyST and Typst for Thesis Projects at Delft University of Technology
   date: 2026-02-22
   parts:
     # colophon: content/parts/colophon.md
@@ -35,7 +35,8 @@ project:
 extends:
   - people.yml
   - options.yml
-  - typst_export_config.yml
+  # - typst_export_config.yml
+  - typst_export_tud_huisstijl.yml
   
 site:
   template: book-theme
