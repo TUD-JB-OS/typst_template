@@ -158,7 +158,7 @@ project:
       # Legacy alias: cover_image
       
       
-      cover_graphical_appearance: black-on-light            # Graphical-cover contrast preset: white-on-dark | black-on-light. Default: white-on-dark.
+      cover_graphical_appearance: white-on-dark            # Graphical-cover contrast preset: white-on-dark | black-on-light. Default: white-on-dark.
       cover_graphical_alignment: left                    # Graphical-cover alignment for the title box: left | center. Default: left.
       cover_logo_alignment: left                         # Graphical-cover alignment for the bottom branding block: left | center. Default: left.
       cover_title_box_color: "#00A6D6"                   # Optional override for the translucent title-box base color: black | white | hex color. 
@@ -175,7 +175,8 @@ project:
       cover_title_weight: bold
       title_font: roboto slab # "arial"
       # cover_subtitle_weight: regular
-      # cover_author_weight: regular
+      cover_author_weight: bold #bold regular italic bold-italic
+      cover_author_style: italic
 
       # Optional extra multi-line text in the title box, below the author:
       # cover_title_box_text: |
@@ -183,7 +184,7 @@ project:
       #    in the title box
       
       # Optional override for the bundled graphical-cover logo variant: white | black.
-      # cover_logo_variant: black
+      cover_logo_variant: black
       cover_logo_width: 5
       cover_footer_bar: true
       cover_footer_bar_height: 2
