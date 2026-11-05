@@ -341,6 +341,9 @@
 [# if options.cover_author_weight is defined and options.cover_author_weight != none and options.cover_author_weight != "" #]
   cover_author_weight: "[-options.cover_author_weight-]",
 [# endif #]
+[# if options.cover_author_style is defined and options.cover_author_style != none #]
+  cover_author_style: "[-options.cover_author_style-]",
+[# endif #]
 [# if options.cover_bottom_text_color is defined and options.cover_bottom_text_color != none and options.cover_bottom_text_color != "" #]
   cover_bottom_text_color: "[-options.cover_bottom_text_color-]",
 [# endif #]
@@ -364,6 +367,15 @@
 [# endif #]
 [# if options.cover_logo_variant is defined and options.cover_logo_variant != none and options.cover_logo_variant != "" #]
   cover_logo_variant: "[-options.cover_logo_variant-]",
+[# endif #]
+[# if options.cover_logo_width is defined and options.cover_logo_width != none #]
+  cover_logo_width: [-options.cover_logo_width-]cm,
+[# endif #]
+[# if options.cover_footer_bar is defined #]
+  cover_footer_bar: [-options.cover_footer_bar-],
+[# endif #]
+[# if options.cover_footer_bar_height is defined and options.cover_footer_bar_height != none #]
+  cover_footer_bar_height: [-options.cover_footer_bar_height-]cm,
 [# endif #]
 [# if options.cover_logo_white #]
   cover_logo_white: "[-options.cover_logo_white-]",

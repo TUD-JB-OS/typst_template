@@ -204,6 +204,9 @@ options:
   - id: cover_author_weight
     type: string
     description: "Optional font weight for the graphical-cover author line. Passed directly to Typst, for example regular, medium, bold, light, or extralight."
+  - id: cover_author_style
+    type: string
+    description: "Font style for the cover author. Accepted values: normal or italic."
   - id: cover_bottom_text_color
     type: string
     description: "Optional override for graphical-cover text shown outside the title box, such as logo text or the institution line. Accepted values: white, black, or a hex color like #f5f5f5."
@@ -240,6 +243,15 @@ options:
   - id: cover_bottom_block_dy_cm
     type: number
     description: "Optional vertical offset for the graphical-cover bottom logo/text block in centimeters. Default: -1.2."
+  - id: cover_logo_width
+    type: number
+    description: "Optional width for the graphical-cover logo. Default: 5."
+  - id: cover_footer_bar
+    type: boolean
+    description: "Show a thin footer bar at the bottom of the graphical cover. Default: false."
+  - id: cover_footer_bar_height
+    type: number
+    description: "Height of the graphical-cover footer bar in centimeters. Default: 2." 
 
   # Title page
   - id: title_page_variant

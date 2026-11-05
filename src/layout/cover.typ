@@ -243,6 +243,7 @@
     page_alignment: resolve_cover_alignment(page_alignment),
     logo_alignment: resolve_cover_logo_alignment(cover_logo_alignment),
     logo: resolved_logo,
+
   )
 }
 
@@ -276,9 +277,13 @@
   title_font: "arial",
   subtitle_weight: "regular",
   author_weight: "regular",
+  author_style: "normal",
   show_subtitle: true,
   page_alignment: "left",
   logo_alignment: "left",
+  cover_logo_width: 2cm,
+  cover_footer_bar: false,
+  cover_footer_bar_height: 2cm,
   title_box_text: none,
   logo_text: none,
   show_bottom_ribbon: false,
@@ -313,6 +318,19 @@
     set page(background: image(image_path), margin: 0pt)
     set par(first-line-indent: 0pt, justify: false)
 
+    // White footer bar at the bottom of the cover.
+    if cover_footer_bar {
+      place(
+        bottom + left,
+        rect(
+          width: pw,
+          height: cover_footer_bar_height,
+          fill: white,
+          stroke: none,
+        ),
+      )
+    }
+
     // Title box: title, subtitle, authors, and optional extra text.
     place(dy: 2cm, rect(
       width: 100%,
@@ -329,7 +347,7 @@
 
         #if author_line != "" [
           #v(3.5em)
-          #text(fill: resolved_title_text_fill, size: 30pt, weight: author_weight, author_line)
+          #text(fill: resolved_title_text_fill, size: 30pt, weight: author_weight, style: author_style, author_line)
         ]
 
         #if title_box_text != none and title_box_text != "" [
@@ -347,7 +365,7 @@
           #if logo != none [
             #image(
               logo,
-              width: 7cm,
+              width: cover_logo_width,
               height: auto,
               fit: "contain",
             )
@@ -416,9 +434,13 @@
   title_font: "arial",
   subtitle_weight: "regular",
   author_weight: "regular",
+  author_style: "normal",
   show_subtitle: true,
   page_alignment: "left",
   cover_logo_alignment: "left",
+  cover_logo_width: 2cm,
+  cover_footer_bar: false,
+  cover_footer_bar_height: 2cm,
   title_box_text: none,
   logo_text: none,
   logo_variant: none,
@@ -469,11 +491,15 @@
       title_font: title_font,
       subtitle_weight: subtitle_weight,
       author_weight: author_weight,
+      author_style: author_style,
       show_subtitle: show_subtitle,
       page_alignment: resolved.page_alignment,
       logo_alignment: resolved.logo_alignment,
       title_box_text: title_box_text,
       logo_text: logo_text,
+      cover_logo_width: cover_logo_width,
+      cover_footer_bar: cover_footer_bar,
+      cover_footer_bar_height: cover_footer_bar_height,
       show_bottom_ribbon: show_bottom_ribbon,
       bottom_ribbon_fill: resolved.bottom_ribbon_fill,
       bottom_block_dy: bottom_block_dy,

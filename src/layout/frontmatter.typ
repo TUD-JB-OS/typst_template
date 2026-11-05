@@ -17,6 +17,7 @@
 // Renders one named section such as Abstract, Preface, or Acknowledgements.
 #let render_frontmatter_section(title, content) = {
   if content != none and content != "" {
+    set par(first-line-indent: 0pt)
     align(center, text(15pt, weight: "bold", title))
     v(1.2em)
     content

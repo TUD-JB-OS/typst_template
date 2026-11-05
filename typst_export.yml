@@ -180,7 +180,10 @@ project:
       
       # Optional override for the bundled graphical-cover logo variant: white | black.
       # cover_logo_variant: black
-      
+      # cover_footer_bar: false
+      # cover_footer_bar_height: 2
+      # cover_logo_width: 2,
+
       # Optional custom white/black cover-logo files:
       # cover_logo_white: content/assets/logo_white.svg
       # cover_logo_black: content/assets/logo_black.svg
