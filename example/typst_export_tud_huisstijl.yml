@@ -184,8 +184,12 @@ project:
       
       # Optional override for the bundled graphical-cover logo variant: white | black.
       # cover_logo_variant: black
+      cover_logo_width: 5
       cover_footer_bar: true
       cover_footer_bar_height: 2
+      cover_bottom_block_dy_cm: 0.3 # Optional vertical offset in cm for the graphical-cover bottom logo/text block. Default: -1.2.
+
+      
 
       # Optional custom white/black cover-logo files:
       # cover_logo_white: content/assets/logo_white.svg
@@ -205,8 +209,7 @@ project:
       # Opacity of the graphical-cover bottom ribbon, from 0 to 100. Default: 55.
       # cover_bottom_ribbon_opacity_pct: 55
       
-      # Optional vertical offset in cm for the graphical-cover bottom logo/text block. Default: -1.2.
-      cover_bottom_block_dy_cm: 0.5
+      
       
 
 # ==============================================================================
