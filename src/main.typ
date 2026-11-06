@@ -178,6 +178,16 @@
   // but it is easier to set them here as a default for the whole document 
   // and then change them back for the main matter.
 
+  // set table(
+  //   stroke: none,
+  //   inset: (x: 8pt, y: 6pt),
+  // )
+  // Table captions above, figure captions below
+  show figure.where(kind: "table"): it => {
+    set figure.caption(position: top)
+    it
+  }
+
 
    // For example, the page numbering starts as roman for the front matter and then it is switched to arabic when the main matter starts.
    set page(
@@ -216,11 +226,17 @@
     spacing: line_spacing_em,
   )
 
+  // Academic table styling (booktabs-inspired)
+
+
   // Shared component styling.
   show math.equation: set text(font: font_math)
   show math.equation: set block(spacing: 1em)
+   
+  show raw.where(block: true): it => { block(above: 1.5em, below: 1.5em,)[#pad(left: 2em, right: 0pt, it)  ]}    //indent code blocks for better readability
   show raw: set text(font: font_mono, size: font_size_pt - 1pt)
-  show link: set text(fill: blue.darken(30%))
+
+  show link: set text(fill: rgb("#555555"),  weight: "medium",)           // link color and weight
 
   let setup-numbering(body) = {
     set heading(numbering: (..args) => {
@@ -295,14 +311,28 @@
   // Helper function for figure styling.
   let configure_figures(body) = {
     show figure.caption: it => {
-      set text(size: 9pt)
-      set align(left)
-      set par(justify: true)
-      it
+      set text(size:   font_size_pt)
+      set par(justify: false)
+
+      block(width: 100%)[
+        #align(left)[
+          #text(weight: 600, style: "italic")[
+            #it.supplement #context it.counter.display(it.numbering):
+          ]
+          #text(
+            size: font_size_pt - .5pt,
+            style: "italic",
+            weight: "regular",
+          )[#it.body]
+        ]
+      ]
     }
 
     body
   }
+
+  // Show figure with left alignment.
+  // show figure: set align(left)
 
   // Global numbering and component rules.
   show: body => setup-numbering(body)

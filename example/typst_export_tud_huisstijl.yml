@@ -218,6 +218,7 @@ project:
 # ==============================================================================
       # Title-page variant: basic (or "simple") | formal | custom (or 1 | 2 | 3). Default: formal.
       # title_page_variant: basic
+      # title_page_title_font: roboto slab
 
       # Formal title-page statement text. This behaves like the cover text
       # fields, but placeholders can be replaced from mapped project.options values
@@ -264,8 +265,9 @@ project:
       colophon_cover_description: The cover image is a template demonstration background.
       
       show_colophon_confidentiality_statement: true       # Show the optional confidentiality statement above the colophon publication table. Default: false.
-      colophon_confidentiality_statement: This thesis is confidential and cannot be made public.      
-      colophon_company_logo: content/assets/JBlogo.svg    # Optional secondary logo (e.g. company or research group) shown in the colophon when provided.
+      colophon_confidentiality_statement: "An electronic version of this thesis is available on: http://repository.tudelft.nl/." # This thesis is confidential and cannot be made public."
+      
+      # colophon_company_logo: content/assets/JBlogo.svg    # Optional secondary logo (e.g. company or research group) shown in the colophon when provided.
 
       # Optional fields shown in the colophon publication table:
       # colophon_printer: Printer name

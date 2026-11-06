@@ -11,6 +11,7 @@
 // - some MyST values are mapped twice in different shapes for the title page
 // - if an argument is omitted here, src/main.typ supplies the default
 
+
 #show: thesis_template.with(
   // Shared document metadata
   // These values are reused across the cover, title page, and front matter.
@@ -460,6 +461,7 @@
 
 // MyST adds helper imports here.
 [-IMPORTS-]
+
 
 // MyST adds the ordered document content here.
 [-CONTENT-]
