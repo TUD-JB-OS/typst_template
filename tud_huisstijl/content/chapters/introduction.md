@@ -17,12 +17,24 @@ Here we provide background on the project and this specific template. We explore
 The Jupyter Book project allows to convert the sourcefiles in different outputs using the Abstract Syntax Tree.
 ```
 
+```{note}
+At Delft University of Technology (TUD), people started using Jupyter Book to create open educational resources mainly in the form of [online educational textbooks](https://interactivetextbooks.tudelft.nl). Various initiatives were taken to lower the technical barrier for educators to create and share their own resources, see for example [Teachbooks](https://teachbooks.tudelft.nl).
+
+With the introduction of Jupyter Book 2, the opportunity arose to create scientific content (e.g., research articles, theses, reports) in addition to educational content. As new technologies are adopted when the benefits are clear and the barriers are low, we applied for the [TUD's Open Science Fund](https://www.tudelft.nl/en/open-science) to explore a seemingly effortless workflow with Jupyter Book for open publishing scientific content. This grant was awarded in October 2025.
+
+This template is one of the result of this project. We aim to help (TU Delft) students, researchers and educators to create, publish, and share open educational and scientific resources with Jupyter Book. The [project's guide](https://jboss.tudelft.nl) covers the entire workflow from installation, content creation, and customization to publishing and sharing. Below we highlight the Typst template features.
+
+```
 
 ## Combining MyST Markdown and Typst
 
 MyST Markdown is an extensible Markdown-based authoring framework designed for scientific and technical communication. It supports familiar Markdown syntax alongside advanced features such as mathematical expressions, citations, cross-references, figures, tables, and interactive content. Through the MyST publishing ecosystem, documents can be transformed into structured, navigable websites.
 
 Typst is a modern typesetting system designed to produce high-quality documents with precise control over typography, page layout, and visual presentation. It provides a flexible alternative to traditional typesetting systems and is particularly suitable for academic publications that require consistent formatting and structured document elements.
+
+```{aside}
+This is an aside
+```
 
 By integrating these two technologies, the publishing workflow takes advantage of their complementary strengths:
 

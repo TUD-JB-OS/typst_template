@@ -185,6 +185,65 @@ The graphical cover includes several further options for fine-tuning its appeara
 | `cover_bottom_ribbon_color` | Sets the ribbon colour. |
 | `cover_bottom_ribbon_opacity_pct` | Sets the ribbon opacity between 0 and 100. |
 
+
+## Two options
+
+````{figure}
+
+```{figure} ../figures/cover_original.png
+:label: fig_cover_original
+
+The original 
+```
+
+```{figure} ../figures/cover_white_nofooter.png
+:label: fig_cover_white_nofooter
+
+The second option without footer, with logo
+```
+
+Two versions of the cover
+```` 
+
+
+Is the original, made with these settings:
+```yml      
+      # Optional override for the bundled graphical-cover logo variant: white | black.
+      cover_logo_variant: black
+      cover_logo_width: 5
+      cover_footer_bar: true
+      cover_footer_bar_height: 2
+      cover_bottom_block_dy_cm: 0.3 # Optional vertical offset in cm for the graphical-cover bottom logo/text block. Default: -1.2.
+
+      
+
+      # Optional custom white/black cover-logo files:
+      # cover_logo_white: content/assets/logo_white.svg
+      cover_logo_black: content/assets/TuDelft_logo_cmyk.svg
+```
+
+
+
+
+Is second option, made with these settings:
+```yml      
+      # Optional override for the bundled graphical-cover logo variant: white | black.
+      cover_logo_variant: white
+      cover_logo_width: 7
+      cover_footer_bar: false #true
+      # cover_footer_bar_height: 2
+      # cover_bottom_block_dy_cm: 0.3 # Optional vertical offset in cm for the graphical-cover bottom logo/text block. Default: -1.2.
+
+      
+
+      # Optional custom white/black cover-logo files:
+      # cover_logo_white: content/assets/logo_white.svg
+      # cover_logo_black: content/assets/TuDelft_logo_cmyk.svg
+```
+
+
+
+
 +++ { "page-break": true }
 ## Title page	
 Basic and formal variants, metadata and configurable statements
@@ -398,4 +457,4 @@ The following table summarises the available title page configuration variables.
 
 
 ## Colophon	
-Publication details, copyright, confidentiality and optional elements
+Publication details, copyright, confidentiality and optional elements test.

@@ -13,6 +13,9 @@
 // This is the main template function that assembles the whole document.
 ////////////////////////////////////////////////////////////////////////
 
+
+
+
 #let thesis_template(
   // Shared document metadata.
   title: "Untitled Report",
@@ -178,16 +181,31 @@
   // but it is easier to set them here as a default for the whole document 
   // and then change them back for the main matter.
 
-  // set table(
-  //   stroke: none,
-  //   inset: (x: 8pt, y: 6pt),
-  // )
-  // Table captions above, figure captions below
-  show figure.where(kind: "table"): it => {
-    set figure.caption(position: top)
-    it
-  }
+////// TABLE //////
+  set table(
+    inset: (x: 8pt, y: 6pt),
 
+    stroke: (x, y) => (
+      top: none,
+      bottom: if y == 0 { 0.6pt + black } else { none },
+      left: if x > 0 { 0.2pt + rgb("#aaa6a6") } else { none },
+      right: none,
+    ),
+  )
+
+    show table.cell.where(y: 0): set text(weight: 600)  //bold header row
+
+    
+    show figure.where(kind: "table"): it => { // Table captions above, figure captions below
+      v(1em)
+      set figure.caption(position: top)
+      it
+      v(1em)
+    }
+
+
+  //aside handler
+  // 
 
    // For example, the page numbering starts as roman for the front matter and then it is switched to arabic when the main matter starts.
    set page(
@@ -310,26 +328,30 @@
 
   // Helper function for figure styling.
   let configure_figures(body) = {
+    // Caption styling
     show figure.caption: it => {
-      set text(size:   font_size_pt)
-      set par(justify: false)
+      set text(size: 9pt)
+      set align(left)
+      set par(justify: true)
 
-      block(width: 100%)[
-        #align(left)[
-          #text(weight: 600, style: "italic")[
-            #it.supplement #context it.counter.display(it.numbering):
-          ]
-          #text(
-            size: font_size_pt - .5pt,
-            style: "italic",
-            weight: "regular",
-          )[#it.body]
+      [
+        #text(weight: "bold")[
+          #it.supplement #context it.counter.display(it.numbering):
         ]
+        #it.body
       ]
+    }
+
+    // Vertical spacing around figures
+    show figure.where(kind: "figure"): it => {
+      v(1em)
+      it
+      v(1em)
     }
 
     body
   }
+
 
   // Show figure with left alignment.
   // show figure: set align(left)

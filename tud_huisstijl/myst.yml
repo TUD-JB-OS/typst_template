@@ -14,7 +14,7 @@ project:
   keywords: [myst, typst, jupyter book, thesis template, TU Delft, thesis, academic writing workflow, document automation]
 
   license: CC-BY-4.0
-  doi: doi:10.5181/typst.12345678/exampledoi
+  doi: 10.5281/zenodo.24034720
   bibliography:
     - reference.bib
 
@@ -22,7 +22,7 @@ project:
     - file: content/index.md
     - file: content/chapters/introduction.md
     - file: content/chapters/example-page.md
-    - file: content/chapters/background.md
+    - file: content/chapters/instructions.md
     - file: content/chapters/cover.md
     - file: content/chapters/layout.md
     - file: content/chapters/branding.md
