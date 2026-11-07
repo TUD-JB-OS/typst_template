@@ -1,0 +1,14 @@
+[workspace]
+authors = ["FreekPols <c.f.j.pols@tudelft.nl>"]
+channels = ["conda-forge"]
+name = "typst_template"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+mystmd = ">=1.12.0,<2"
+imagemagick = ">=7.1.2_31,<8"
+typst = ">=0.15.1,<0.16"
+pymupdf = ">=2.1,<3"
