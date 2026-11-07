@@ -195,6 +195,9 @@ options:
   - id: cover_title_text_color
     type: string
     description: "Optional override for graphical-cover title, subtitle, and author text color. Accepted values: white, black, or a hex color like #f5f5f5."
+  - id: cover_title_font
+    type: string
+    description: "Optional override for graphical-cover title font. Passed directly to Typst, for example Roboto Slab, Arial, or Times New Roman."
   - id: cover_title_weight
     type: string
     description: "Optional font weight for the graphical-cover title. Passed directly to Typst, for example regular, medium, bold, light, or extralight."
@@ -284,9 +287,9 @@ options:
   - id: logo_titlepage_width
     type: string
     description: "Width of the logo in the title page. Default: 3.9cm."
-  - id: title_font
+  - id: title_page_title_font
     type: string
-    description: "Optional override for the title font on the title page. Default: arial."
+    description: "Optional override for the title font on the title page. Default: roboto slab."
 
   # Colophon
   - id: show_colophon_publication_info

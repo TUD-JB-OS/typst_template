@@ -398,6 +398,9 @@
 [# if options.title_page_basic_title_alignment is defined and options.title_page_basic_title_alignment != none and options.title_page_basic_title_alignment != "" #]
   title_page_basic_title_alignment: "[-options.title_page_basic_title_alignment-]",
 [# endif #]
+[# if options.title_page_title_font is defined and options.title_page_title_font != none #]
+  title_page_title_font: "[-options.title_page_title_font-]",
+[# endif #]
 [# if options.title_page_basic_table_alignment is defined and options.title_page_basic_table_alignment != none and options.title_page_basic_table_alignment != "" #]
   title_page_basic_table_alignment: "[-options.title_page_basic_table_alignment-]",
 [# endif #]

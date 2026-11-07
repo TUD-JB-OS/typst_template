@@ -100,7 +100,8 @@
   cover_title_weight: "regular",
   cover_subtitle_weight: "regular",
   cover_author_weight: "regular",
-  cover_author_style: "normal", 
+  cover_author_style: "normal",
+  cover_title_font: "arial", 
   cover_title_box_color: none,
   cover_title_box_text: none,
   cover_title_box_opacity_pct: 55,
@@ -122,8 +123,10 @@
   title_page_basic_table_alignment: "left",
   title_page_logo_alignment: "center",
   title_page_formal_statement: none,
+  title_page_title_font: "roboto slab", 
   logo_titlepage_width: 3.9cm,
-  title_font: "arial",
+  
+  
 
   // Colophon.
   show_colophon_publication_info: true,
@@ -382,7 +385,7 @@
       title_box_color: cover_title_box_color,
       title_box_opacity_pct: cover_title_box_opacity_pct,
       title_weight: cover_title_weight,
-      title_font: title_font,
+      cover_title_font: cover_title_font,
       subtitle_weight: cover_subtitle_weight,
       author_weight: cover_author_weight,
       author_style: cover_author_style,
@@ -423,6 +426,7 @@
   if show_title_page {
     title_page(
       title,
+      title_page_title_font: title_page_title_font,
       subtitle: subtitle,
       authors: authors,
       isbn: isbn,

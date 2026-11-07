@@ -195,13 +195,15 @@
       if name != "" {
         if show_affiliations and affiliation != none and str(affiliation) != "" {
           rows += ([
-            #name
+            #text(weight: "regular", name)
             #linebreak()
-            #v(-1pt)
-            #text(size: 9pt, style: "italic", fill: rgb("#555555"), str(affiliation))
+            #v(-4pt)
+            #h(5pt)
+            #text(size: 9pt, weight: "regular", style: "italic", fill: rgb("#555555"), str(affiliation))
+            #v(2pt)
           ],)
         } else {
-          rows += ([#name],)
+          rows += ([#text(weight: "regular", name)],)
         }
       }
     }
@@ -335,6 +337,7 @@
   show_contributor_affiliations: true,
   title_alignment: "center",
   table_alignment: "left",
+  title_page_title_font: "Roboto Slab",
 ) = {
   let author_line = render_comma_list(authors)
   let author_affiliation_line = render_lines(affiliations)
@@ -372,7 +375,7 @@
   let date_rows = title_page_info_row("Defense date", defense_date)
 
   render_title_page_heading_line(
-    text(22pt, weight: "bold", title),
+    text(22pt, font: title_page_title_font, weight: "bold", title),
     heading_alignment: title_alignment,
   )
 
@@ -577,6 +580,7 @@
   committee: (),
   show_contributor_affiliations: true,
   formal_statement: none,
+  title_page_title_font: "Roboto Slab",
 ) = {
   let author_line = render_comma_list(authors)
   let supervisor_cell = render_contributor_entries(
@@ -605,7 +609,7 @@
   )
 
   render_title_page_heading_line(
-    text(30pt, weight: "bold", title),
+    text(30pt, font: title_page_title_font, weight: "bold", title),
     heading_alignment: "center",
   )
 
@@ -689,7 +693,7 @@
   basic_table_alignment: "left",
   logo_alignment: "center",
   logo_titlepage_width: 3.9cm,
-  
+  title_page_title_font: "Roboto Slab",
 ) = {
   let mode = resolve_title_page_variant(variant)
   let resolved_title = resolve_title_page_title(title)
@@ -744,6 +748,7 @@
         show_contributor_affiliations: show_contributor_affiliations,
         title_alignment: resolved_basic_title_alignment,
         table_alignment: resolved_basic_table_alignment,
+        title_page_title_font: title_page_title_font,
       )
     } else if mode == "formal" {
       title_page_formal_variant(
@@ -763,6 +768,7 @@
         committee: resolved_committee,
         show_contributor_affiliations: show_contributor_affiliations,
         formal_statement: formal_statement,
+        title_page_title_font: title_page_title_font,
       )
     }
   }

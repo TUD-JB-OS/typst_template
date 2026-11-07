@@ -173,7 +173,7 @@ project:
       # Optional font weights for the graphical-cover elements:
       # Passed directly to Typst, for example regular, medium, bold, light, or extralight.
       cover_title_weight: bold
-      title_font: roboto slab # "arial"
+      cover_title_font: roboto slab # "arial"
       # cover_subtitle_weight: regular
       cover_author_weight: bold #bold regular italic bold-italic
       cover_author_style: italic
@@ -218,7 +218,7 @@ project:
 # ==============================================================================
       # Title-page variant: basic (or "simple") | formal | custom (or 1 | 2 | 3). Default: formal.
       # title_page_variant: basic
-      # title_page_title_font: roboto slab
+      title_page_title_font: roboto slab
 
       # Formal title-page statement text. This behaves like the cover text
       # fields, but placeholders can be replaced from mapped project.options values
