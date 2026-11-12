@@ -7,14 +7,14 @@ Academic documents, such as theses, research reports, technical documentation, a
 
 Traditionally, producing both a website and a professionally typeset PDF requires separate publishing workflows or substantial manual adjustments. Maintaining multiple versions of the same document can introduce inconsistencies, increase maintenance efforts, and complicate the publication process.
 
-To address these challenges, this template combines **MyST Markdown (MySTMD)** and **Typst** into a unified publishing workflow. Authors can maintain their content in a single source format and generate both an interactive website and a professionally formatted PDF. This approach separates content creation from document presentation, allowing authors to focus on their work while maintaining consistency across publication formats.
+To address these challenges, we started the [JBOSS project](https://jboss.tudelft.nl): An attempt to make interactive thesis and scientific publications with the generation of an automated pdf. This template combines **JupyterBOok**, **MyST Markdown (MySTMD)** and **Typst** into a unified publishing workflow. Authors can maintain their content in a single source format and generate both an interactive website and a professionally formatted PDF. This approach separates content creation from document presentation, allowing authors to focus on their work while maintaining consistency across publication formats.
 
-Here we provide background on the project and this specific template. We explore the utilization of Jupyter Book 2 and the MyST Document Stack as a modular, extensible, web-native stack for authoring and publishing computational narratives @bolyen2025jupyter. Our project aims to investigate the capabilities and benefits of using JupyterBook for the publication of bachelor and master thesis.
+Here we provide background on the project and this specific template. We explore the utilization of Jupyter Book 2 and the MyST Document Stack as a modular, extensible, web-native stack for authoring and publishing computational narratives @bolyen2025jupyter. 
 
 ```{figure} AST.png
 :label: fig_AST
 
-The Jupyter Book project allows to convert the sourcefiles in different outputs using the Abstract Syntax Tree.
+The Jupyter Book project allows to convert the sourcefiles in different outputs using the Abstract Syntax Tree, source [Mystmd.org](https://mystmd.org).
 ```
 
 ```{note}
@@ -26,7 +26,8 @@ This template is one of the result of this project. We aim to help (TU Delft) st
 
 ```
 
-## Combining MyST Markdown and Typst
+## Combining Jupyter Book, Myst Markdown and Typst
+Jupyter Book is an open-source publishing framework designed for scientific and technical communication. Built on MyST Markdown, it combines familiar Markdown syntax with advanced features such as mathematical expressions, citations, cross-references, figures, tables, executable code, and interactive content. Jupyter Book enables authors to create structured, navigable websites and publish their work in multiple formats, including professionally typeset PDFs.
 
 MyST Markdown is an extensible Markdown-based authoring framework designed for scientific and technical communication. It supports familiar Markdown syntax alongside advanced features such as mathematical expressions, citations, cross-references, figures, tables, and interactive content. Through the MyST publishing ecosystem, documents can be transformed into structured, navigable websites.
 
@@ -36,9 +37,10 @@ Typst is a modern typesetting system designed to produce high-quality documents 
 This is an aside
 ```
 
-By integrating these two technologies, the publishing workflow takes advantage of their complementary strengths:
+By integrating these technologies, the publishing workflow takes advantage of their complementary strengths:
 
-- **MyST Markdown** provides an accessible, structured authoring environment and supports interactive, web-based publications.
+- **Jupyter Book** allows easy online and interactive publishing.
+- **MyST Markdown** provides an accessible, structured authoring environment.
 - **Typst** provides the typesetting capabilities required for professional, print-ready PDF documents.
 - **A shared source** ensures that the website and PDF are generated from the same underlying content, reducing duplication and improving consistency.
 - **Configuration-driven formatting** allows authors to customise the appearance and structure of the PDF without modifying the underlying template code.
@@ -47,7 +49,7 @@ The result is a publishing workflow in which content, configuration, and present
 
 ## The TU Delft template
 
-The TU Delft Typst template has been developed to provide a consistent and recognisable visual identity for academic documents produced through the MyST publishing workflow.
+The TU Delft Typst template has been developed to provide a consistent and recognisable visual identity for academic documents produced through the JBOSS publishing workflow.
 
 The template follows the TU Delft corporate identity guidelines and has been reviewed and approved by the TU Delft *huisstijl* team. It provides a standardised foundation for producing documents that align with the university's visual identity while retaining flexibility for different document types and author preferences.
 
@@ -59,9 +61,9 @@ Importantly, the template is intended to simplify the publication process. Autho
 
 ## Purpose and scope of this guide
 
-This guide introduces the TU Delft Typst template and documents the configuration options available to authors using MyST Markdown.
+This guide introduces the TU Delft Typst template and documents the configuration options available to authors using MyST Markdown. In chapter [{number}](#ch_instructions) {numref}`ch_instructions` we describe the JBOSS workflow, while a fully description is provided on the [JBOSS website](https://jboss.tudelft.nl).
 
-Its primary purpose is to explain how the template can be configured and to demonstrate the visual effects of the available settings. Particular attention is given to the variables that control document structure, page layouts, typography, branding, and the appearance of individual document elements.
+The primary purpose of this manual is to explain how the template can be configured and to demonstrate the visual effects of the available settings. Particular attention is given to the variables that control document structure, page layouts, typography, branding, and the appearance of individual document elements.
 
 The guide is organised around the template's configuration categories. For each category, the relevant variables are described, including their purpose, accepted values, default behaviour, and resulting appearance in the generated PDF. Where appropriate, visual examples illustrate the differences between configuration options.
 

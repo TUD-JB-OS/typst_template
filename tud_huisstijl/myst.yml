@@ -5,7 +5,7 @@ project:
   subtitle: Template for MyST and Typst for Thesis Projects 
   date: 2026-11-06
   parts:
-    # colophon: content/parts/colophon.md
+    colophon: content/parts/colophon.md
     acknowledgements: content/parts/acknowledgements.md
     abstract: content/parts/abstract.md
     # preface: content/parts/preface.md
@@ -32,10 +32,17 @@ project:
     - file: content/appendices/a-extra-data.md
     - file: content/appendices/b-supplement.md
 
+
+  abbreviations:
+    JB2: Jupyter Book 2
+    JBOSS: Jupyter Book Open Science
+
 extends:
+  - typst_export_tudelft.yml
+  # - typst_export_general.yml
   - people.yml
   - options.yml
-  - typst_export_tudelft.yml
+  
   
 site:
   template: book-theme
