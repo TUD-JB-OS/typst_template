@@ -313,6 +313,9 @@
 [# if options.cover_page_variant #]
   cover_page_variant: "[-options.cover_page_variant-]",
 [# endif #]
+[# if options.cover_title_font #]
+  cover_title_font: "[-options.cover_title_font-]",
+[# endif #]
 [# if options.show_cover_subtitle is defined #]
   show_cover_subtitle: [-options.show_cover_subtitle-],
 [# endif #]

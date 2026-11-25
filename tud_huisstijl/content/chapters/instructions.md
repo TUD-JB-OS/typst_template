@@ -22,7 +22,7 @@ The [JBOSS starterkit](https://tud-jb-os.github.io/starterkit/) is an online Git
 In this project, we prefer to work with [pixi](https://pixi.prefix.dev/), a fast, modern, and reproducible package management tool. We included the most necessary software and packages that you will need, including JupyterLab and Typst.
 
 ## The TU Delft Typst template
-The [TU Delft Typst template]() was originally designed for the use JBOSS project. It can be automatically included in the [JBOSS-starterkit](https://tud-jb-os.github.io/starterkit/) as the default template. Simply uncomment the line with `typst_export_tudelft.yml` and comment `typst_export_...`.
+The [TU Delft Typst template](https://github.com/TUD-JB-OS/typst_template) was originally designed for the use JBOSS project. It can be automatically included in the [JBOSS-starterkit](https://tud-jb-os.github.io/starterkit/) as the default template. Simply uncomment the line with `typst_export_tudelft.yml` and comment `typst_export_...`.
 
 ```yml
 

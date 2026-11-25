@@ -101,7 +101,7 @@
   cover_subtitle_weight: "regular",
   cover_author_weight: "regular",
   cover_author_style: "normal",
-  cover_title_font: "arial", 
+  cover_title_font: "roboto slab", 
   cover_title_box_color: none,
   cover_title_box_text: none,
   cover_title_box_opacity_pct: 55,
